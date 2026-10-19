@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { EMBEDDING_MODEL } from '../config.js'
 
-// Loads the embedding model in a worker and embeds `meanings` once.
+// Loads the embedding model in a worker and embeds `targets` once; guesses score as the max
+// cosine similarity against any target.
 // Returns { status: 'loading' | 'ready' | 'error', progress (0-100), error, score(text) }.
 // Pass `enabled: false` to skip loading entirely (e.g. when the meaning round is already over).
-export function useEmbedder(meanings, { enabled = true } = {}) {
+export function useEmbedder(targets, { enabled = true } = {}) {
   const [state, setState] = useState({ status: 'loading', progress: 0, error: null })
   const workerRef = useRef(null)
   const pendingRef = useRef(new Map())
@@ -34,7 +35,7 @@ export function useEmbedder(meanings, { enabled = true } = {}) {
       }
     })
 
-    worker.postMessage({ type: 'init', model: EMBEDDING_MODEL, meanings })
+    worker.postMessage({ type: 'init', model: EMBEDDING_MODEL, targets })
 
     return () => {
       worker.terminate()
@@ -42,7 +43,7 @@ export function useEmbedder(meanings, { enabled = true } = {}) {
       for (const { reject } of pending.values()) reject(new Error('Embedder stopped'))
       pending.clear()
     }
-  }, [meanings, enabled])
+  }, [targets, enabled])
 
   const score = useCallback((text) => {
     const worker = workerRef.current

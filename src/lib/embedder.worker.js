@@ -1,6 +1,6 @@
 // Runs the sentence-embedding model off the main thread.
 //
-// Messages in:  { type: 'init', model, meanings }   { type: 'score', id, text }
+// Messages in:  { type: 'init', model, targets }   { type: 'score', id, text }
 // Messages out: { type: 'progress', progress }  { type: 'ready' }
 //               { type: 'score', id, similarity }  { type: 'error', id?, message }
 import { env, pipeline } from '@huggingface/transformers'
@@ -8,7 +8,7 @@ import { env, pipeline } from '@huggingface/transformers'
 env.allowLocalModels = false
 
 let extractorPromise = null
-let meaningVectors = null
+let targetVectors = null
 
 async function embed(extractor, texts) {
   const output = await extractor(texts, { pooling: 'mean', normalize: true })
@@ -22,7 +22,7 @@ function dot(a, b) {
   return sum
 }
 
-async function init(model, meanings) {
+async function init(model, targets) {
   extractorPromise ??= pipeline('feature-extraction', model, {
     dtype: 'q8',
     progress_callback: (info) => {
@@ -32,19 +32,19 @@ async function init(model, meanings) {
     },
   })
   const extractor = await extractorPromise
-  meaningVectors = await embed(extractor, meanings)
+  targetVectors = await embed(extractor, targets)
   self.postMessage({ type: 'ready' })
 }
 
 async function score(id, text) {
   const extractor = await extractorPromise
   const [guess] = await embed(extractor, [text])
-  const similarity = Math.max(...meaningVectors.map((m) => dot(guess, m)))
+  const similarity = Math.max(...targetVectors.map((t) => dot(guess, t)))
   self.postMessage({ type: 'score', id, similarity })
 }
 
 self.addEventListener('message', ({ data }) => {
-  const task = data.type === 'init' ? init(data.model, data.meanings) : score(data.id, data.text)
+  const task = data.type === 'init' ? init(data.model, data.targets) : score(data.id, data.text)
   task.catch((err) => {
     self.postMessage({ type: 'error', id: data.id, message: String(err?.message ?? err) })
   })

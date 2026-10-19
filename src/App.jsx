@@ -28,7 +28,9 @@ export default function App() {
     game.meaning.done ? recordResult(puzzleNumber, game.meaning.solved) : loadStats(),
   )
   const [showStats, setShowStats] = useState(false)
-  const embedder = useEmbedder(proverb.meanings, { enabled: !game.meaning.done })
+  // A guess can match a plain paraphrase or a well-known English idiom with the same meaning.
+  const [scoringTargets] = useState(() => [...proverb.meanings, ...proverb.englishEquivalents])
+  const embedder = useEmbedder(scoringTargets, { enabled: !game.meaning.done })
 
   useEffect(() => {
     saveGame(game)
