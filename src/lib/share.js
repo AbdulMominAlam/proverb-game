@@ -1,6 +1,6 @@
 import { GAME_NAME } from '../config.js'
 import { BAND_EMOJI, closenessBand } from './heat.js'
-import { TIER_EMOJI, tierFor } from './scoring.js'
+import { RATING_EMOJI, ratingFor } from './scoring.js'
 
 function hintsLabel(n) {
   if (n === 0) return 'no hints'
@@ -9,7 +9,7 @@ function hintsLabel(n) {
 
 // Spoiler-free summary: colour per meaning guess, closeness square per origin guess.
 export function buildShareText(game) {
-  const meaning = game.meaning.guesses.map((g) => TIER_EMOJI[tierFor(g.similarity)]).join('')
+  const meaning = game.meaning.guesses.map((g) => RATING_EMOJI[ratingFor(g.similarity)]).join('')
   const origin = game.origin.guesses.map((g) => (g.correct ? '✅' : BAND_EMOJI[closenessBand(g.km)])).join('')
   const originEnd = game.origin.solved ? '' : '❌'
 

@@ -9,10 +9,11 @@
   --accent-text: #ffffff;
   --good: #3f8f5a;
   --bad: #c0463b;
-  --tier-cold: #4f7fb8;
-  --tier-warm: #c9932b;
-  --tier-hot: #d2553a;
-  --tier-solved: var(--good);
+  --rating-cold: #4f7fb8;
+  --rating-warm: #c9932b;
+  --rating-veryClose: #d2553a;
+  --rating-gotIt: var(--good);
+  --rating-spotOn: var(--good);
   --map-sea: #e9e3d6;
   --map-land: #cfc9bd;
   --map-border: #f6f2ea;
@@ -44,9 +45,9 @@
     --accent-text: #10201b;
     --good: #6cbf86;
     --bad: #e06c60;
-    --tier-cold: #6f9fd6;
-    --tier-warm: #e0b04f;
-    --tier-hot: #e8775b;
+    --rating-cold: #6f9fd6;
+    --rating-warm: #e0b04f;
+    --rating-veryClose: #e8775b;
     --map-sea: #1b1c19;
     --map-land: #3d3e38;
     --map-border: #1b1c19;
@@ -356,12 +357,27 @@ input {
 .hotcold-meta {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   margin-top: 4px;
 }
 
-.hotcold-pct {
+.hotcold-label {
   font-weight: 700;
+}
+
+/* Dev-only raw similarity (see DebugSimilarity.jsx). */
+.debug-readout {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--muted);
   font-variant-numeric: tabular-nums;
+}
+
+.results-stats dd.results-rating {
+  font-size: 1rem;
+  line-height: 1.25;
 }
 
 .hints {
@@ -643,6 +659,13 @@ input {
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   margin: 18px 0;
+}
+
+/* On phones, four tiles are too narrow for "Best guess" and "Very close". */
+@media (max-width: 439px) {
+  .results-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .results-stats div {

@@ -1,7 +1,8 @@
 import { MAX_MEANING_ATTEMPTS, MAX_ORIGIN_ATTEMPTS } from '../config.js'
 import { formatCountryList } from '../lib/geo.js'
-import { toPercent } from '../lib/scoring.js'
+import { RATING_LABELS, ratingFor } from '../lib/scoring.js'
 import { buildShareText } from '../lib/share.js'
+import DebugSimilarity from './DebugSimilarity.jsx'
 import ShareButton from './ShareButton.jsx'
 
 export default function ResultsScreen({ game, proverb, alreadyPlayed, children }) {
@@ -32,8 +33,11 @@ export default function ResultsScreen({ game, proverb, alreadyPlayed, children }
 
       <dl className="results-stats">
         <div>
-          <dt>Score</dt>
-          <dd>{toPercent(best)}%</dd>
+          <dt>Best guess</dt>
+          <dd className="results-rating">
+            {RATING_LABELS[ratingFor(best)]}
+            <DebugSimilarity similarity={best} />
+          </dd>
         </div>
         <div>
           <dt>Meaning</dt>

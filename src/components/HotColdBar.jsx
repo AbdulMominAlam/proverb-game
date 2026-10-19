@@ -1,10 +1,11 @@
-import { SOLVE_THRESHOLD } from '../config.js'
-import { TIER_LABELS, tierFor, toPercent } from '../lib/scoring.js'
+import { RATING_LABELS, THRESHOLD_POSITION, barPosition, ratingFor } from '../lib/scoring.js'
+import DebugSimilarity from './DebugSimilarity.jsx'
 
 export default function HotColdBar({ similarity }) {
-  const pct = toPercent(similarity)
-  const tier = tierFor(similarity)
-  const color = `var(--tier-${tier})`
+  const rating = ratingFor(similarity)
+  const label = RATING_LABELS[rating]
+  const fill = Math.round(barPosition(similarity) * 100)
+  const color = `var(--rating-${rating})`
 
   return (
     <div className="hotcold">
@@ -13,15 +14,18 @@ export default function HotColdBar({ similarity }) {
         role="meter"
         aria-valuemin={0}
         aria-valuemax={100}
-        aria-valuenow={pct}
-        aria-label={`${pct}% match, ${TIER_LABELS[tier]}`}
+        aria-valuenow={fill}
+        aria-valuetext={label}
+        aria-label="How close your guess is"
       >
-        <div className="hotcold-fill" style={{ width: `${Math.max(pct, 3)}%`, background: color }} />
-        <div className="hotcold-target" style={{ left: `${toPercent(SOLVE_THRESHOLD)}%` }} />
+        <div className="hotcold-fill" style={{ width: `${Math.max(fill, 3)}%`, background: color }} />
+        <div className="hotcold-target" style={{ left: `${THRESHOLD_POSITION * 100}%` }} />
       </div>
       <div className="hotcold-meta">
-        <span className="hotcold-pct" style={{ color }}>{pct}%</span>
-        <span className="muted small">{TIER_LABELS[tier]}</span>
+        <span className="hotcold-label" style={{ color }}>
+          {label}
+        </span>
+        <DebugSimilarity similarity={similarity} />
       </div>
     </div>
   )
