@@ -155,11 +155,10 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
                 role="option"
                 aria-selected={i === active}
                 className={`suggestion ${i === active ? 'suggestion-active' : ''}`}
-                // mousedown fires before the input's blur, so the list is still there to click.
-                onMouseDown={(e) => {
-                  e.preventDefault()
-                  choose(c)
-                }}
+                // Cancelling mousedown keeps focus (and the on-screen keyboard) in the input.
+                // The pick happens on click, which a drag to scroll the list never fires.
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => choose(c)}
               >
                 {c.name}
               </li>

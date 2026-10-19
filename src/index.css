@@ -449,6 +449,7 @@ input {
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
   max-height: 260px;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 /* Set by placeList() when there's no room between the input and the keyboard.
@@ -461,14 +462,23 @@ input {
 }
 
 .suggestion {
-  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  min-height: 44px; /* keep in sync with ROW_HEIGHT in CountryInput.jsx */
+  padding: 0 12px;
   border-radius: 8px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .suggestion-active,
 .suggestion:hover {
   background: var(--surface-2);
+}
+
+.suggestion:active {
+  background: var(--border);
 }
 
 .origin-guess {
