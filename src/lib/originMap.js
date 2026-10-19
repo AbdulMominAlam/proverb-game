@@ -100,5 +100,15 @@ export function borderDistanceKm(a, b) {
 
 // Distance from a guess to the nearest accepted country.
 export function distanceToAnswer(guessCode, acceptedCodes) {
-  return Math.min(...acceptedCodes.map((code) => borderDistanceKm(guessCode, code)))
+  return nearestAnswer(guessCode, acceptedCodes).km
+}
+
+// The accepted country closest to a guess (by border distance), and how far it is.
+export function nearestAnswer(guessCode, acceptedCodes) {
+  let best = null
+  for (const code of acceptedCodes) {
+    const km = borderDistanceKm(guessCode, code)
+    if (!best || km < best.km) best = { code, km }
+  }
+  return best
 }

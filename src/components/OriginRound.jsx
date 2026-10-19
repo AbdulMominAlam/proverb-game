@@ -1,7 +1,7 @@
 import { MAX_ORIGIN_ATTEMPTS } from '../config.js'
-import { countriesByCode, formatCountryList, formatKm } from '../lib/geo.js'
+import { countriesByCode, directionBetween, formatCountryList, formatKm } from '../lib/geo.js'
 import { BAND_LABELS, CORRECT_COLOR, closenessBand, heatColor } from '../lib/heat.js'
-import { distanceToAnswer } from '../lib/originMap.js'
+import { distanceToAnswer, nearestAnswer } from '../lib/originMap.js'
 import CountryInput from './CountryInput.jsx'
 import OriginMap from './OriginMap.jsx'
 
@@ -40,14 +40,7 @@ export default function OriginRound({ proverb, origin, dispatch, onContinue }) {
                   />
                   <span className="origin-name">{countriesByCode.get(g.code).name}</span>
                   <span className="origin-result small">
-                    {g.correct ? (
-                      'Correct'
-                    ) : (
-                      <>
-                        <span className="visually-hidden">{BAND_LABELS[closenessBand(g.km)]}, </span>
-                        <span className="muted">{formatKm(g.km)}</span>
-                      </>
-                    )}
+                    {g.correct ? 'Correct' : <GuessDistance guess={g} accepted={accepted} />}
                   </span>
                 </li>
               ))}
@@ -77,5 +70,23 @@ export default function OriginRound({ proverb, origin, dispatch, onContinue }) {
         </div>
       </div>
     </section>
+  )
+}
+
+// "2,840 km ↗️": distance to the nearest accepted country, and the direction to head in.
+function GuessDistance({ guess, accepted }) {
+  const direction = directionBetween(guess.code, nearestAnswer(guess.code, accepted).code)
+  return (
+    <>
+      <span className="visually-hidden">
+        {BAND_LABELS[closenessBand(guess.km)]}, {formatKm(guess.km)}, head {direction.name}
+      </span>
+      <span className="muted" aria-hidden="true">
+        {formatKm(guess.km)}
+      </span>
+      <span className="origin-arrow" aria-hidden="true">
+        {direction.arrow}
+      </span>
+    </>
   )
 }
