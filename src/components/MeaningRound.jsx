@@ -6,6 +6,10 @@ import ModelLoading from './ModelLoading.jsx'
 
 const normalise = (text) => text.trim().toLowerCase().replace(/\s+/g, ' ')
 
+// On touch screens, focusing from code after an await can't reliably open the keyboard
+// (iOS) or reopens one the player just closed (Android), so only refocus for mouse users.
+const prefersRefocus = () => window.matchMedia?.('(pointer: fine)').matches ?? true
+
 export default function MeaningRound({ proverb, meaning, embedder, dispatch, onContinue }) {
   const [text, setText] = useState('')
   const [scoring, setScoring] = useState(false)
@@ -23,17 +27,19 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
       setMessage('You already tried that one.')
       return
     }
+    const submitted = text
     setScoring(true)
     setMessage(null)
     try {
       const similarity = await embedder.score(guess)
       dispatch({ type: 'meaningGuess', text: guess, similarity })
-      setText('')
+      // The field stays editable while scoring; keep anything typed since submitting.
+      setText((current) => (current === submitted ? '' : current))
     } catch {
       setMessage('Something went wrong scoring that guess. Please try again.')
     } finally {
       setScoring(false)
-      inputRef.current?.focus()
+      if (prefersRefocus()) inputRef.current?.focus()
     }
   }
 
@@ -81,8 +87,8 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
               value={text}
               maxLength={200}
               onChange={(e) => setText(e.target.value)}
+              // Never readOnly while scoring: on iOS that dismisses the keyboard mid-game.
               disabled={!ready}
-              readOnly={scoring}
             />
             <button type="submit" className="button" disabled={!ready || scoring || !text.trim()}>
               {scoring ? 'Checking…' : 'Guess'}
