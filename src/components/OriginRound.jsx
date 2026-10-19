@@ -1,10 +1,10 @@
 import { MAX_ORIGIN_ATTEMPTS } from '../config.js'
 import {
-  acceptedCountryNames,
   arrowFor,
   countriesByCode,
   directionNameFor,
   evaluateOriginGuess,
+  formatCountryList,
   formatKm,
 } from '../lib/geo.js'
 import CountryInput from './CountryInput.jsx'
@@ -62,7 +62,7 @@ export default function OriginRound({ proverb, origin, dispatch, onContinue }) {
             <p className="reveal-status">{origin.solved ? 'Well found!' : 'Out of guesses.'}</p>
             <p className="reveal-meaning">
               {accepted.length > 1 ? 'Accepted answers: ' : 'It’s from '}
-              {acceptedCountryNames(proverb).join(', ')}.
+              {formatCountryList(proverb, 6)}.
             </p>
           </div>
           {onContinue && (

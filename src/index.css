@@ -435,3 +435,97 @@ input {
   font-size: 1.3rem;
   line-height: 1;
 }
+
+.results-heading {
+  margin: 0 0 16px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.results-proverb {
+  padding: 22px 20px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.results-proverb p {
+  margin: 0;
+}
+
+.results-original {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.results-language {
+  margin-top: 4px !important;
+}
+
+.results-literal {
+  margin-top: 14px !important;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+}
+
+.results-meaning {
+  margin: 14px 0 6px !important;
+  font-weight: 600;
+}
+
+.results-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.results-stats div {
+  padding: 10px 4px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  text-align: center;
+}
+
+.results-stats dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.results-stats dd {
+  margin: 2px 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.share-preview {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px dashed var(--border);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+.share-fallback {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  font: inherit;
+  resize: none;
+}

@@ -1,0 +1,56 @@
+import { MAX_MEANING_ATTEMPTS, MAX_ORIGIN_ATTEMPTS } from '../config.js'
+import { formatCountryList } from '../lib/geo.js'
+import { toPercent } from '../lib/scoring.js'
+import { buildShareText } from '../lib/share.js'
+import ShareButton from './ShareButton.jsx'
+
+export default function ResultsScreen({ game, proverb, children }) {
+  const { meaning, origin } = game
+  const best = Math.max(...meaning.guesses.map((g) => g.similarity))
+  const shareText = buildShareText(game, proverb)
+
+  return (
+    <section className="results" aria-labelledby="results-heading">
+      <h2 id="results-heading" className="results-heading">
+        {meaning.solved ? 'Nicely done!' : 'Better luck tomorrow'}
+      </h2>
+
+      <div className="results-proverb">
+        <p className="results-original" dir="auto">{proverb.original}</p>
+        <p className="results-language muted small">
+          {proverb.language} · {formatCountryList(proverb)}
+        </p>
+        <p className="results-literal">“{proverb.literal}”</p>
+        <p className="results-meaning">{proverb.meanings[0]}.</p>
+        <p className="small">
+          <span className="muted">English equivalent:</span> {proverb.englishEquivalent}
+        </p>
+      </div>
+
+      <dl className="results-stats">
+        <div>
+          <dt>Best match</dt>
+          <dd>{toPercent(best)}%</dd>
+        </div>
+        <div>
+          <dt>Meaning</dt>
+          <dd>
+            {meaning.solved ? `${meaning.guesses.length}/${MAX_MEANING_ATTEMPTS}` : `X/${MAX_MEANING_ATTEMPTS}`}
+          </dd>
+        </div>
+        <div>
+          <dt>Hints</dt>
+          <dd>{meaning.hintsUsed}</dd>
+        </div>
+        <div>
+          <dt>Origin</dt>
+          <dd>{origin.solved ? `${origin.guesses.length}/${MAX_ORIGIN_ATTEMPTS}` : `X/${MAX_ORIGIN_ATTEMPTS}`}</dd>
+        </div>
+      </dl>
+
+      <pre className="share-preview" aria-label="Share preview">{shareText}</pre>
+      <ShareButton text={shareText} />
+      {children}
+    </section>
+  )
+}
