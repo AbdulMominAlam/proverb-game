@@ -85,6 +85,10 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
               ref={inputRef}
               className="text-input"
               type="text"
+              // Autocorrect stays on here: correctly spelled guesses score better.
+              inputMode="text"
+              enterKeyHint="go"
+              autoCapitalize="sentences"
               autoComplete="off"
               placeholder={ready ? 'In your own words, it means…' : 'Loading…'}
               value={text}

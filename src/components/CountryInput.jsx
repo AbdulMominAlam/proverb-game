@@ -133,6 +133,12 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
           aria-controls={listId}
           aria-autocomplete="list"
           aria-activedescendant={showList ? `${listId}-${active}` : undefined}
+          // Autocorrect would "fix" partial names like "Brun" while the player is still typing.
+          inputMode="text"
+          enterKeyHint="go"
+          autoCapitalize="words"
+          autoCorrect="off"
+          spellCheck={false}
           autoComplete="off"
           placeholder="Start typing a country…"
           value={query}
