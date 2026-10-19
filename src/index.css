@@ -451,6 +451,15 @@ input {
   overflow-y: auto;
 }
 
+/* Set by placeList() when there's no room between the input and the keyboard.
+   The best match sits next to the input, where the thumb is. */
+.suggestions[data-side='above'] {
+  top: auto;
+  bottom: calc(100% + 4px);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .suggestion {
   padding: 10px 12px;
   border-radius: 8px;

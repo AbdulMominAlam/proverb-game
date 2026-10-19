@@ -5,7 +5,7 @@ const MARGIN = 12
 
 // The visible part of the page in layout-viewport coordinates. With an on-screen keyboard open,
 // the visual viewport is the part of the screen the keyboard doesn't cover.
-function visibleArea() {
+export function visibleArea() {
   const vv = window.visualViewport
   if (!vv) return { top: 0, bottom: window.innerHeight }
   return { top: vv.offsetTop, bottom: vv.offsetTop + vv.height }

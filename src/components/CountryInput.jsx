@@ -1,8 +1,25 @@
-import { useId, useMemo, useRef, useState } from 'react'
+import { useId, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import countries from '../data/countries.json'
-import { useKeepAboveKeyboard } from '../lib/keyboard.js'
+import { useKeepAboveKeyboard, visibleArea } from '../lib/keyboard.js'
 
 const MAX_SUGGESTIONS = 8
+const ROW_HEIGHT = 44
+const LIST_PADDING = 8
+const LIST_GAP = 4
+
+// Opens the list below the input when it fits above the keyboard, otherwise above the input,
+// and caps its height to the visible space so no suggestion is hidden behind the keyboard.
+function placeList(input, list, count) {
+  const { top, bottom } = visibleArea()
+  const r = input.getBoundingClientRect()
+  const spaceBelow = bottom - r.bottom - LIST_GAP - LIST_PADDING
+  const spaceAbove = r.top - top - LIST_GAP - LIST_PADDING
+  const needed = count * ROW_HEIGHT + LIST_PADDING
+  const side = spaceBelow >= needed || spaceBelow >= spaceAbove ? 'below' : 'above'
+  const room = side === 'below' ? spaceBelow : spaceAbove
+  list.dataset.side = side
+  list.style.maxHeight = `${Math.max(ROW_HEIGHT * 2 + LIST_PADDING, Math.min(room, needed))}px`
+}
 
 const fold = (s) =>
   s
@@ -82,6 +99,23 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
   }
 
   const showList = open && suggestions.length > 0 && !selected
+  const listRef = useRef(null)
+
+  useLayoutEffect(() => {
+    const list = listRef.current
+    if (!showList || !list) return
+    const place = () => placeList(inputRef.current, list, suggestions.length)
+    place()
+    const vv = window.visualViewport
+    vv?.addEventListener('resize', place)
+    vv?.addEventListener('scroll', place)
+    window.addEventListener('scroll', place, { passive: true })
+    return () => {
+      vv?.removeEventListener('resize', place)
+      vv?.removeEventListener('scroll', place)
+      window.removeEventListener('scroll', place)
+    }
+  }, [showList, suggestions.length])
 
   return (
     <form className="country-form" onSubmit={submit}>
@@ -113,7 +147,7 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
           onBlur={() => setOpen(false)}
         />
         {showList && (
-          <ul className="suggestions" id={listId} role="listbox">
+          <ul className="suggestions" id={listId} role="listbox" ref={listRef}>
             {suggestions.map((c, i) => (
               <li
                 key={c.code}
