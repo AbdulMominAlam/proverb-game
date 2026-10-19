@@ -69,11 +69,18 @@ function dot(a, b) {
   return sum
 }
 
+// Sizes for the progress bar, for files that will actually be downloaded: anything already in
+// the browser cache loads without a network request, so it isn't probed or counted.
 async function measureDownloads(model) {
   const modelFileUrl = new URL(`${env.localModelPath}${model}/${MODEL_FILE}`, self.location.href).href
   const urls = [modelFileUrl, wasm.wasmPaths?.wasm].filter(Boolean)
-  const found = await Promise.all(urls.map(probeSize))
-  urls.forEach((url, i) => found[i] && sizes.set(url, found[i]))
+  await Promise.all(
+    urls.map(async (url) => {
+      if (await env.customCache.match(url)) return
+      const size = await probeSize(url)
+      if (size) sizes.set(url, size)
+    }),
+  )
 }
 
 async function init(model, targets) {

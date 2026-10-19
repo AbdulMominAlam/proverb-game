@@ -13,3 +13,9 @@ The meaning checker loads its embedding model from here instead of the Hugging F
 
 To update, download the same files for a new revision from
 `https://huggingface.co/Xenova/all-MiniLM-L6-v2/resolve/<revision>/<file>`.
+
+These files are served with `Cache-Control: public, max-age=31536000, immutable` (see `vercel.json`),
+and transformers.js also keeps them in the browser's Cache API. Never replace a file in place:
+browsers that already have it would keep the old copy. To change the model, put the new files
+under a new folder (for example a different model id or a revision in the path) and update
+`EMBEDDING_MODEL` in `src/config.js`.
