@@ -514,6 +514,16 @@ input {
   gap: 10px;
 }
 
+/* Up to 10 country guesses: tighter rows so the list stays short on phones. */
+.origin-side .guess-list {
+  gap: 6px;
+}
+
+.origin-side .guess {
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
 .origin-correct {
   border-color: var(--good);
 }

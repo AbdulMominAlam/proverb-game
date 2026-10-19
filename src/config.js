@@ -17,6 +17,6 @@ export const LAUNCH_DATE = '2026-10-19'
 export const SOLVE_THRESHOLD = 0.62
 
 export const MAX_MEANING_ATTEMPTS = 5
-export const MAX_ORIGIN_ATTEMPTS = 3
+export const MAX_ORIGIN_ATTEMPTS = 10
 
 export const EMBEDDING_MODEL = 'Xenova/all-MiniLM-L6-v2'
