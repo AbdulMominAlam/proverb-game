@@ -463,8 +463,7 @@ input {
 .origin-guess {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
 .origin-correct {
@@ -476,6 +475,7 @@ input {
 }
 
 .origin-result {
+  margin-left: auto;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -483,10 +483,19 @@ input {
   white-space: nowrap;
 }
 
-.origin-arrow {
-  font-size: 1.3rem;
-  line-height: 1;
+.chip {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12);
 }
+
+.origin-layout {
+  display: grid;
+  gap: 14px;
+}
+
 
 .results-heading {
   margin: 0 0 16px;
@@ -710,3 +719,7 @@ input {
   stroke: var(--text);
 }
 
+
+.origin-side .guess-list + .country-form {
+  margin-top: 10px;
+}

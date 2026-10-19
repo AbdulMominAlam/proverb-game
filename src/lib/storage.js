@@ -34,7 +34,10 @@ if (import.meta.env.DEV && new URLSearchParams(window.location.search).has('rese
 // Returns today's saved game, or a fresh one if the save is from another day.
 export function loadGame(puzzleNumber) {
   const saved = read(GAME_KEY)
-  return saved?.puzzleNumber === puzzleNumber ? saved : newGame(puzzleNumber)
+  if (saved?.puzzleNumber !== puzzleNumber) return newGame(puzzleNumber)
+  // Saves from before the heat map stored origin guesses as bare country codes without distances.
+  if (saved.origin.guesses.some((g) => typeof g !== 'object')) return { ...saved, origin: newGame(puzzleNumber).origin }
+  return saved
 }
 
 export function saveGame(game) {

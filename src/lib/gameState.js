@@ -27,7 +27,7 @@ export function gameReducer(state, action) {
     case 'originGuess': {
       const o = state.origin
       if (o.done || !state.meaning.done) return state
-      const guesses = [...o.guesses, action.code]
+      const guesses = [...o.guesses, { code: action.code, km: action.km, correct: action.correct }]
       const solved = action.correct
       const done = solved || guesses.length >= MAX_ORIGIN_ATTEMPTS
       return { ...state, origin: { guesses, solved, done } }

@@ -1,21 +1,17 @@
 import { MAX_ORIGIN_ATTEMPTS } from '../config.js'
-import {
-  arrowFor,
-  countriesByCode,
-  directionNameFor,
-  evaluateOriginGuess,
-  formatCountryList,
-  formatKm,
-} from '../lib/geo.js'
+import { countriesByCode, formatCountryList, formatKm } from '../lib/geo.js'
+import { BAND_LABELS, CORRECT_COLOR, closenessBand, heatColor } from '../lib/heat.js'
+import { distanceToAnswer } from '../lib/originMap.js'
 import CountryInput from './CountryInput.jsx'
+import OriginMap from './OriginMap.jsx'
 
 export default function OriginRound({ proverb, origin, dispatch, onContinue }) {
   const accepted = proverb.acceptedCountries
   const attempt = origin.guesses.length + 1
 
   function handleGuess(code) {
-    const { correct } = evaluateOriginGuess(code, accepted)
-    dispatch({ type: 'originGuess', code, correct })
+    const correct = accepted.includes(code)
+    dispatch({ type: 'originGuess', code, correct, km: correct ? 0 : distanceToAnswer(code, accepted) })
   }
 
   return (
@@ -29,49 +25,57 @@ export default function OriginRound({ proverb, origin, dispatch, onContinue }) {
         )}
       </div>
 
-      {origin.guesses.length > 0 && (
-        <ul className="guess-list">
-          {origin.guesses.map((code) => {
-            const result = evaluateOriginGuess(code, accepted)
-            return (
-              <li key={code} className={`guess origin-guess ${result.correct ? 'origin-correct' : ''}`}>
-                <span className="origin-name">{countriesByCode.get(code).name}</span>
-                {result.correct ? (
-                  <span className="origin-result">✅ Correct</span>
-                ) : (
-                  <span className="origin-result">
-                    {formatKm(result.distanceKm)}
-                    <span className="origin-arrow" role="img" aria-label={`to the ${directionNameFor(result.bearing)}`}>
-                      {arrowFor(result.bearing)}
-                    </span>
+      <div className="origin-layout">
+        <OriginMap guesses={origin.guesses} revealCodes={origin.done ? accepted : []} />
+
+        <div className="origin-side">
+          {origin.guesses.length > 0 && (
+            <ul className="guess-list">
+              {origin.guesses.map((g) => (
+                <li key={g.code} className={`guess origin-guess ${g.correct ? 'origin-correct' : ''}`}>
+                  <span
+                    className="chip"
+                    style={{ background: g.correct ? CORRECT_COLOR : heatColor(g.km) }}
+                    aria-hidden="true"
+                  />
+                  <span className="origin-name">{countriesByCode.get(g.code).name}</span>
+                  <span className="origin-result small">
+                    {g.correct ? (
+                      'Correct'
+                    ) : (
+                      <>
+                        <span className="visually-hidden">{BAND_LABELS[closenessBand(g.km)]}, </span>
+                        <span className="muted">{formatKm(g.km)}</span>
+                      </>
+                    )}
                   </span>
-                )}
-              </li>
-            )
-          })}
-        </ul>
-      )}
-
-      {!origin.done && (
-        <CountryInput onSubmit={handleGuess} excludedCodes={origin.guesses} />
-      )}
-
-      {origin.done && (
-        <>
-          <div className={`reveal ${origin.solved ? 'reveal-good' : 'reveal-bad'}`}>
-            <p className="reveal-status">{origin.solved ? 'Well found!' : 'Out of guesses.'}</p>
-            <p className="reveal-meaning">
-              {accepted.length > 1 ? 'Accepted answers: ' : 'It’s from '}
-              {formatCountryList(proverb, 6)}.
-            </p>
-          </div>
-          {onContinue && (
-            <button type="button" className="button button-wide" onClick={onContinue}>
-              See results
-            </button>
+                </li>
+              ))}
+            </ul>
           )}
-        </>
-      )}
+
+          {!origin.done && (
+            <CountryInput onSubmit={handleGuess} excludedCodes={origin.guesses.map((g) => g.code)} />
+          )}
+
+          {origin.done && (
+            <>
+              <div className={`reveal ${origin.solved ? 'reveal-good' : 'reveal-bad'}`}>
+                <p className="reveal-status">{origin.solved ? 'Well found!' : 'Out of guesses.'}</p>
+                <p className="reveal-meaning">
+                  {accepted.length > 1 ? 'Accepted answers: ' : 'It’s from '}
+                  {formatCountryList(proverb, 6)}.
+                </p>
+              </div>
+              {onContinue && (
+                <button type="button" className="button button-wide" onClick={onContinue}>
+                  See results
+                </button>
+              )}
+            </>
+          )}
+        </div>
+      </div>
     </section>
   )
 }

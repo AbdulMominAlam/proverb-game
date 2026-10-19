@@ -11,8 +11,8 @@ function hintsLabel(n) {
 export function buildShareText(game, proverb) {
   const meaning = game.meaning.guesses.map((g) => TIER_EMOJI[tierFor(g.similarity)]).join('')
   const origin = game.origin.guesses
-    .map((code) => {
-      const r = evaluateOriginGuess(code, proverb.acceptedCountries)
+    .map((g) => {
+      const r = evaluateOriginGuess(g.code, proverb.acceptedCountries)
       return r.correct ? '✅' : arrowFor(r.bearing)
     })
     .join('')

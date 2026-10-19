@@ -1,8 +1,7 @@
-import { useEffect, useReducer, useState } from 'react'
+import { Suspense, lazy, useEffect, useReducer, useState } from 'react'
 import Countdown from './components/Countdown.jsx'
 import Header from './components/Header.jsx'
 import MeaningRound, { MeaningReveal } from './components/MeaningRound.jsx'
-import OriginRound from './components/OriginRound.jsx'
 import ProverbCard from './components/ProverbCard.jsx'
 import ResultsScreen from './components/ResultsScreen.jsx'
 import StatsPanel, { StatsGrid } from './components/StatsPanel.jsx'
@@ -10,6 +9,9 @@ import { getDailyPuzzle } from './lib/daily.js'
 import { gameReducer, isGameOver } from './lib/gameState.js'
 import { loadGame, loadStats, recordResult, saveGame } from './lib/storage.js'
 import { useEmbedder } from './lib/useEmbedder.js'
+
+// The origin round brings the world map with it, so it loads only when needed.
+const OriginRound = lazy(() => import('./components/OriginRound.jsx'))
 
 function initialScreen(game) {
   if (isGameOver(game)) return 'results'
@@ -58,12 +60,14 @@ export default function App() {
             {screen === 'origin' ? (
               <>
                 <MeaningReveal proverb={proverb} solved={game.meaning.solved} />
-                <OriginRound
-                  proverb={proverb}
-                  origin={game.origin}
-                  dispatch={act}
-                  onContinue={() => setScreen('results')}
-                />
+                <Suspense fallback={<p className="muted round">Loading the map…</p>}>
+                  <OriginRound
+                    proverb={proverb}
+                    origin={game.origin}
+                    dispatch={act}
+                    onContinue={() => setScreen('results')}
+                  />
+                </Suspense>
               </>
             ) : (
               <MeaningRound
