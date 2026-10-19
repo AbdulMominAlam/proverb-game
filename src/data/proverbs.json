@@ -1,0 +1,602 @@
+[
+  {
+    "id": "tr-damlaya-damlaya",
+    "original": "Damlaya damlaya göl olur.",
+    "language": "Turkish",
+    "acceptedCountries": ["TR", "AZ"],
+    "literal": "Drop by drop, it becomes a lake.",
+    "meanings": [
+      "Small amounts add up to something big over time",
+      "Little efforts accumulate into great results",
+      "Saving a little at a time builds up a lot"
+    ],
+    "englishEquivalent": "Every little helps. / Many a mickle makes a muckle.",
+    "hints": [
+      "Think about what happens when you keep adding something tiny, again and again.",
+      "It is often said to encourage saving money or steady work.",
+      "It's about how small things, repeated, add up to something large."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "jp-saru-mo-ki",
+    "original": "猿も木から落ちる",
+    "language": "Japanese",
+    "acceptedCountries": ["JP"],
+    "literal": "Even monkeys fall from trees.",
+    "meanings": [
+      "Even experts make mistakes",
+      "Everyone, however skilled, sometimes fails",
+      "Nobody is perfect, not even the best at something"
+    ],
+    "englishEquivalent": "Even Homer nods. / Nobody's perfect.",
+    "hints": [
+      "Climbing trees is what monkeys are best at.",
+      "It's said to comfort someone who slipped up at their own speciality.",
+      "It's about how even the most skilled people get things wrong."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "es-camaron-que-se-duerme",
+    "original": "Camarón que se duerme se lo lleva la corriente.",
+    "language": "Spanish",
+    "acceptedCountries": ["MX", "ES", "CO", "VE", "AR", "CL", "PE", "EC", "BO", "PY", "UY", "CU", "DO", "PR", "GT", "HN", "SV", "NI", "CR", "PA"],
+    "literal": "The shrimp that falls asleep is carried away by the current.",
+    "meanings": [
+      "If you are not alert, you will miss out or fall behind",
+      "If you are lazy or careless, events will sweep you away",
+      "Stay attentive or others will get ahead of you"
+    ],
+    "englishEquivalent": "You snooze, you lose.",
+    "hints": [
+      "What does the shrimp lose by sleeping?",
+      "It's a warning to people who are slow to act or not paying attention.",
+      "It's about missing out because you weren't alert."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "ur-bandar-kya-jaane",
+    "original": "بندر کیا جانے ادرک کا سواد",
+    "language": "Urdu",
+    "acceptedCountries": ["PK", "IN"],
+    "literal": "What does a monkey know of the taste of ginger?",
+    "meanings": [
+      "An ignorant person cannot appreciate something valuable",
+      "Some people cannot appreciate quality or refinement",
+      "You can't expect someone without taste to value fine things"
+    ],
+    "englishEquivalent": "Casting pearls before swine.",
+    "hints": [
+      "Ginger is prized, but a monkey would just spit it out.",
+      "It's said, usually with a sneer, about someone who doesn't value what they're given.",
+      "It's about people who can't appreciate something good."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "gr-glossa-kokala",
+    "original": "Η γλώσσα κόκαλα δεν έχει και κόκαλα τσακίζει.",
+    "language": "Greek",
+    "acceptedCountries": ["GR", "CY"],
+    "literal": "The tongue has no bones, yet it breaks bones.",
+    "meanings": [
+      "Words can cause great harm",
+      "What you say can hurt people deeply",
+      "Speech is powerful and can be very damaging"
+    ],
+    "englishEquivalent": "The tongue is sharper than the sword.",
+    "hints": [
+      "The tongue here stands for something it produces.",
+      "It's a warning to be careful how you speak to people.",
+      "It's about how words can wound as badly as violence."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "sw-usipoziba-ufa",
+    "original": "Usipoziba ufa utajenga ukuta.",
+    "language": "Swahili",
+    "acceptedCountries": ["TZ", "KE"],
+    "literal": "If you don't fill the crack, you will have to build a wall.",
+    "meanings": [
+      "Fix small problems early before they become big ones",
+      "Neglecting a minor issue leads to a much bigger job later",
+      "Dealing with trouble early saves a lot of effort"
+    ],
+    "englishEquivalent": "A stitch in time saves nine.",
+    "hints": [
+      "Compare how much work a crack takes with how much a whole wall takes.",
+      "It's advice about timing and neglect.",
+      "It's about fixing small problems before they grow."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "zh-hua-she-tian-zu",
+    "original": "画蛇添足",
+    "language": "Chinese",
+    "acceptedCountries": ["CN", "TW"],
+    "literal": "Drawing a snake and adding feet to it.",
+    "meanings": [
+      "Adding something unnecessary spoils what was already finished",
+      "Overdoing something ruins it",
+      "Knowing when to stop, because extra effort can make things worse"
+    ],
+    "englishEquivalent": "Gilding the lily. / Leave well enough alone.",
+    "hints": [
+      "Does a snake need feet?",
+      "The drawing was already complete before the feet went on.",
+      "It's about ruining something by adding what isn't needed."
+    ],
+    "difficulty": "hard",
+    "verified": false
+  },
+  {
+    "id": "fr-petit-a-petit",
+    "original": "Petit à petit, l'oiseau fait son nid.",
+    "language": "French",
+    "acceptedCountries": ["FR", "BE", "CH", "CA"],
+    "literal": "Little by little, the bird builds its nest.",
+    "meanings": [
+      "Patience and steady effort achieve big goals",
+      "Great things are built gradually, one small step at a time",
+      "Keep working slowly and you will get there"
+    ],
+    "englishEquivalent": "Rome wasn't built in a day.",
+    "hints": [
+      "A nest is made one twig at a time.",
+      "It's said to someone frustrated by slow progress.",
+      "It's about patience and gradual effort paying off."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "fa-mar-gazideh",
+    "original": "مار گزیده از ریسمان سیاه و سفید می‌ترسد",
+    "language": "Persian",
+    "acceptedCountries": ["IR", "AF"],
+    "literal": "Someone bitten by a snake is afraid of a black-and-white rope.",
+    "meanings": [
+      "After a bad experience, people become fearful of anything similar",
+      "Past harm makes you overly cautious",
+      "Once hurt, you fear even harmless things that remind you of it"
+    ],
+    "englishEquivalent": "Once bitten, twice shy.",
+    "hints": [
+      "A striped rope can look a bit like a snake.",
+      "The rope is harmless; the fear comes from memory.",
+      "It's about becoming wary after being hurt once."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "vi-an-qua-nho",
+    "original": "Ăn quả nhớ kẻ trồng cây.",
+    "language": "Vietnamese",
+    "acceptedCountries": ["VN"],
+    "literal": "When you eat the fruit, remember the one who planted the tree.",
+    "meanings": [
+      "Be grateful to those who made your good fortune possible",
+      "Remember and appreciate the people whose work came before you",
+      "Show gratitude for what others have given you"
+    ],
+    "englishEquivalent": "Don't forget those who paved the way.",
+    "hints": [
+      "Someone else did the work long before the fruit was ready.",
+      "It's often said about parents, teachers and ancestors.",
+      "It's about gratitude."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "tr-uzum-uzume",
+    "original": "Üzüm üzüme baka baka kararır.",
+    "language": "Turkish",
+    "acceptedCountries": ["TR"],
+    "literal": "A grape darkens by looking at another grape.",
+    "meanings": [
+      "People become like the company they keep",
+      "You pick up the habits of those around you",
+      "Friends and surroundings influence who you become"
+    ],
+    "englishEquivalent": "You are the company you keep.",
+    "hints": [
+      "Grapes on the same bunch ripen together.",
+      "It's often said about children and their friends.",
+      "It's about becoming like the people around you."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "pl-nie-chwal-dnia",
+    "original": "Nie chwal dnia przed zachodem słońca.",
+    "language": "Polish",
+    "acceptedCountries": ["PL", "CZ"],
+    "literal": "Don't praise the day before the sun has set.",
+    "meanings": [
+      "Don't celebrate success until it is certain",
+      "Wait until something is finished before judging it a success",
+      "Things can still go wrong, so don't be overconfident too early"
+    ],
+    "englishEquivalent": "Don't count your chickens before they hatch.",
+    "hints": [
+      "A lot can still happen before evening.",
+      "It's a warning against premature confidence.",
+      "It's about not celebrating until something is truly over."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "ko-nanmareun-saega",
+    "original": "낮말은 새가 듣고 밤말은 쥐가 듣는다",
+    "language": "Korean",
+    "acceptedCountries": ["KR", "KP"],
+    "literal": "Birds hear the words spoken by day, and mice hear the words spoken by night.",
+    "meanings": [
+      "Be careful what you say, because someone is always listening",
+      "Secrets get out; you are never truly unheard",
+      "Watch your words, as they can reach unexpected ears"
+    ],
+    "englishEquivalent": "Walls have ears.",
+    "hints": [
+      "Whatever the time of day, something is listening.",
+      "It's a warning given to gossips.",
+      "It's about being careful what you say, because it can be overheard."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "ur-door-ke-dhol",
+    "original": "دور کے ڈھول سہانے",
+    "language": "Urdu",
+    "acceptedCountries": ["PK", "IN"],
+    "literal": "Drums sound pleasant from far away.",
+    "meanings": [
+      "Things seem better from a distance than they really are",
+      "Something unfamiliar looks more attractive than it is up close",
+      "Other places and situations always seem better than your own"
+    ],
+    "englishEquivalent": "The grass is always greener on the other side.",
+    "hints": [
+      "Imagine standing right next to the drummer instead.",
+      "It's said to people dreaming about a life somewhere else.",
+      "It's about things looking better from a distance."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "pt-agua-mole",
+    "original": "Água mole em pedra dura, tanto bate até que fura.",
+    "language": "Portuguese",
+    "acceptedCountries": ["PT", "BR"],
+    "literal": "Soft water on hard stone keeps striking until it makes a hole.",
+    "meanings": [
+      "Persistence overcomes even the hardest obstacles",
+      "Keep trying and you will eventually succeed",
+      "Gentle but constant effort can wear down anything"
+    ],
+    "englishEquivalent": "Constant dripping wears away the stone.",
+    "hints": [
+      "Water is weak; what makes it win?",
+      "It's said to encourage someone who keeps failing.",
+      "It's about persistence beating resistance."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "ar-eg-elly-eidoh-fel-maya",
+    "original": "اللي إيده في المية مش زي اللي إيده في النار",
+    "language": "Egyptian Arabic",
+    "acceptedCountries": ["EG"],
+    "literal": "The one whose hand is in the water is not like the one whose hand is in the fire.",
+    "meanings": [
+      "Someone in comfort can't understand the suffering of someone in trouble",
+      "It's easy to judge when you aren't the one facing the hardship",
+      "People who aren't affected don't feel the pain of those who are"
+    ],
+    "englishEquivalent": "Easy for you to say. / Walk a mile in my shoes.",
+    "hints": [
+      "One hand is comfortable, the other is in pain.",
+      "It's said in reply to unwanted advice from someone who isn't affected.",
+      "It's about how people who aren't suffering can't truly understand those who are."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "jp-isogaba-maware",
+    "original": "急がば回れ",
+    "language": "Japanese",
+    "acceptedCountries": ["JP"],
+    "literal": "If you are in a hurry, take the long way round.",
+    "meanings": [
+      "Taking the slower, safer route is often faster in the end",
+      "Rushing leads to mistakes, so be careful even when in a hurry",
+      "Haste causes delays; the careful way gets you there sooner"
+    ],
+    "englishEquivalent": "More haste, less speed.",
+    "hints": [
+      "The shortcut might be risky or blocked.",
+      "It's advice for anyone tempted to cut corners.",
+      "It's about how rushing often ends up slowing you down."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "ga-is-minic-a-bhris",
+    "original": "Is minic a bhris béal duine a shrón.",
+    "language": "Irish",
+    "acceptedCountries": ["IE"],
+    "literal": "It is often a person's mouth that has broken their nose.",
+    "meanings": [
+      "Talking too much or saying the wrong thing gets you into trouble",
+      "Your own careless words can bring harm on yourself",
+      "Insulting or provoking people can lead to you getting hurt"
+    ],
+    "englishEquivalent": "Loose lips sink ships. / Think before you speak.",
+    "hints": [
+      "Whose fist really caused the broken nose?",
+      "It's a warning to someone who can't keep quiet.",
+      "It's about how what you say can come back to hurt you."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "th-nam-khuen-hai-reep-tak",
+    "original": "น้ำขึ้นให้รีบตัก",
+    "language": "Thai",
+    "acceptedCountries": ["TH"],
+    "literal": "When the water rises, hurry to scoop it up.",
+    "meanings": [
+      "Take advantage of opportunities while they last",
+      "Act quickly when conditions are favourable",
+      "Seize the moment before the chance passes"
+    ],
+    "englishEquivalent": "Make hay while the sun shines.",
+    "hints": [
+      "High water won't stay high forever.",
+      "It's about timing.",
+      "It's about seizing an opportunity before it disappears."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "ur-ab-pachtaye-kya",
+    "original": "اب پچھتائے کیا ہوت جب چڑیاں چگ گئیں کھیت",
+    "language": "Urdu",
+    "acceptedCountries": ["PK", "IN"],
+    "literal": "What use is regret now, when the birds have already eaten the field?",
+    "meanings": [
+      "It's pointless to regret something after the damage is done",
+      "Act in time, because regret afterwards cannot fix anything",
+      "Once the chance is gone, regretting it is useless"
+    ],
+    "englishEquivalent": "It's no use crying over spilt milk.",
+    "hints": [
+      "The farmer should have guarded the field earlier.",
+      "It's said to someone lamenting a mistake that can't be undone.",
+      "It's about how regret is useless once it's too late."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "it-chi-va-piano",
+    "original": "Chi va piano va sano e va lontano.",
+    "language": "Italian",
+    "acceptedCountries": ["IT", "SM"],
+    "literal": "Whoever goes slowly goes safely and goes far.",
+    "meanings": [
+      "Being slow and careful gets you further than rushing",
+      "Steady, cautious progress leads to lasting success",
+      "Take your time and you will avoid trouble and succeed"
+    ],
+    "englishEquivalent": "Slow and steady wins the race.",
+    "hints": [
+      "Speed isn't everything on a long journey.",
+      "It's said to someone in too much of a rush.",
+      "It's about careful, steady progress beating haste."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "am-dir-biyabir",
+    "original": "ድር ቢያብር አንበሳ ያስር",
+    "language": "Amharic",
+    "acceptedCountries": ["ET"],
+    "literal": "When spider webs unite, they can tie up a lion.",
+    "meanings": [
+      "When weak people unite, they can defeat something powerful",
+      "Unity gives the small great strength",
+      "Working together, the weak can overcome the strong"
+    ],
+    "englishEquivalent": "United we stand, divided we fall.",
+    "hints": [
+      "One strand of web is nothing to a lion.",
+      "It's said to rally people against a stronger opponent.",
+      "It's about the strength of standing together."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "id-air-beriak",
+    "original": "Air beriak tanda tak dalam.",
+    "language": "Indonesian / Malay",
+    "acceptedCountries": ["ID", "MY", "BN", "SG"],
+    "literal": "Rippling water is a sign that it is not deep.",
+    "meanings": [
+      "People who boast loudly often know little",
+      "Those who make the most noise usually have the least substance",
+      "Showing off is a sign of shallowness"
+    ],
+    "englishEquivalent": "Empty vessels make the most noise.",
+    "hints": [
+      "Deep water tends to be calm and still.",
+      "It's said about show-offs and loudmouths.",
+      "It's about how noisy people are often shallow."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "tr-dost-aci-soyler",
+    "original": "Dost acı söyler.",
+    "language": "Turkish",
+    "acceptedCountries": ["TR"],
+    "literal": "A friend speaks bitter words.",
+    "meanings": [
+      "A true friend tells you the hard truth",
+      "Real friends are honest even when it hurts",
+      "Someone who cares about you will tell you unpleasant truths"
+    ],
+    "englishEquivalent": "Faithful are the wounds of a friend.",
+    "hints": [
+      "Bitter here means unpleasant to hear, not angry.",
+      "A flatterer would tell you only what you want to hear.",
+      "It's about honesty being a sign of real friendship."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "ru-bez-truda",
+    "original": "Без труда не вытащишь и рыбку из пруда.",
+    "language": "Russian",
+    "acceptedCountries": ["RU", "BY"],
+    "literal": "Without effort you can't even pull a little fish out of a pond.",
+    "meanings": [
+      "Nothing can be achieved without hard work",
+      "Even small rewards require effort",
+      "You have to work to get results"
+    ],
+    "englishEquivalent": "No pain, no gain.",
+    "hints": [
+      "A small fish in a small pond should be easy, shouldn't it?",
+      "It's said to someone hoping for results without trying.",
+      "It's about how everything worthwhile takes effort."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "mi-na-to-rourou",
+    "original": "Nā tō rourou, nā taku rourou ka ora ai te iwi.",
+    "language": "Māori",
+    "acceptedCountries": ["NZ"],
+    "literal": "With your food basket and my food basket, the people will thrive.",
+    "meanings": [
+      "When everyone contributes, the whole community prospers",
+      "Sharing and cooperation help everyone flourish",
+      "Each person's contribution together sustains the group"
+    ],
+    "englishEquivalent": "Many hands make light work.",
+    "hints": [
+      "Neither basket alone would be enough.",
+      "It's often quoted at community gatherings and fundraisers.",
+      "It's about everyone contributing so the group can flourish."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "zh-san-ge-heshang",
+    "original": "三个和尚没水喝",
+    "language": "Chinese",
+    "acceptedCountries": ["CN", "TW"],
+    "literal": "Three monks have no water to drink.",
+    "meanings": [
+      "When too many people share a job, nobody does it",
+      "Shared responsibility means no one takes responsibility",
+      "More people can mean less gets done because everyone leaves it to others"
+    ],
+    "englishEquivalent": "Too many cooks spoil the broth. / Everybody's business is nobody's business.",
+    "hints": [
+      "One monk alone would simply fetch the water himself.",
+      "With three, each one waits for another to go.",
+      "It's about how shared responsibility can mean nobody does the work."
+    ],
+    "difficulty": "hard",
+    "verified": false
+  },
+  {
+    "id": "tl-ang-hindi-lumingon",
+    "original": "Ang hindi lumingon sa pinanggalingan ay hindi makararating sa paroroonan.",
+    "language": "Tagalog",
+    "acceptedCountries": ["PH"],
+    "literal": "One who does not look back at where they came from will not reach where they are going.",
+    "meanings": [
+      "Never forget your roots or the people who helped you",
+      "Remembering your origins is necessary for success",
+      "You should honour your past and humble beginnings"
+    ],
+    "englishEquivalent": "Don't forget your roots.",
+    "hints": [
+      "This isn't about directions on a road.",
+      "It's often said to people who move away or become successful.",
+      "It's about remembering and respecting where you came from."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "tr-agac-yas-iken",
+    "original": "Ağaç yaş iken eğilir.",
+    "language": "Turkish",
+    "acceptedCountries": ["TR"],
+    "literal": "A tree is bent while it is still young.",
+    "meanings": [
+      "It is easiest to shape and teach people when they are young",
+      "Habits and character should be formed in childhood",
+      "Teach children early, because adults are hard to change"
+    ],
+    "englishEquivalent": "You can't teach an old dog new tricks.",
+    "hints": [
+      "Try bending an old, thick trunk.",
+      "It's usually said about raising children.",
+      "It's about shaping people while they are young."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "ur-ek-aur-ek-gyarah",
+    "original": "ایک اور ایک گیارہ",
+    "language": "Urdu",
+    "acceptedCountries": ["PK", "IN"],
+    "literal": "One and one make eleven.",
+    "meanings": [
+      "Two people working together achieve far more than each alone",
+      "Unity multiplies strength",
+      "Teamwork makes people much stronger"
+    ],
+    "englishEquivalent": "Two heads are better than one.",
+    "hints": [
+      "Picture the two digits written side by side.",
+      "It's about what happens when two people join forces.",
+      "It's about cooperation making you far stronger than the sum of the parts."
+    ],
+    "difficulty": "hard",
+    "verified": false
+  }
+]
