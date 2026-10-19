@@ -1,0 +1,136 @@
+import { useId, useMemo, useState } from 'react'
+import countries from '../data/countries.json'
+
+const MAX_SUGGESTIONS = 8
+
+const fold = (s) =>
+  s
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g, '')
+    .trim()
+
+const searchable = countries.map((c) => ({
+  country: c,
+  keys: [c.name, ...(c.aliases ?? [])].map(fold),
+}))
+
+function suggest(query, excluded) {
+  const q = fold(query)
+  if (!q) return []
+  const prefix = []
+  const contains = []
+  for (const { country, keys } of searchable) {
+    if (excluded.has(country.code)) continue
+    if (keys.some((k) => k.startsWith(q) || k.split(' ').some((w) => w.startsWith(q)))) prefix.push(country)
+    else if (keys.some((k) => k.includes(q))) contains.push(country)
+  }
+  return [...prefix, ...contains].slice(0, MAX_SUGGESTIONS)
+}
+
+function exactMatch(query, excluded) {
+  const q = fold(query)
+  const hit = searchable.find(({ keys }) => keys.includes(q))
+  return hit && !excluded.has(hit.country.code) ? hit.country : null
+}
+
+export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
+  const [query, setQuery] = useState('')
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState(0)
+  const listId = useId()
+  const excluded = useMemo(() => new Set(excludedCodes), [excludedCodes])
+  const suggestions = useMemo(() => suggest(query, excluded), [query, excluded])
+
+  const selected = exactMatch(query, excluded)
+
+  function choose(country) {
+    setQuery(country.name)
+    setOpen(false)
+  }
+
+  function submit(e) {
+    e.preventDefault()
+    if (!selected) return
+    onSubmit(selected.code)
+    setQuery('')
+    setOpen(false)
+    setActive(0)
+  }
+
+  function handleKeyDown(e) {
+    if (!suggestions.length) return
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setOpen(true)
+      setActive((i) => (i + 1) % suggestions.length)
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setOpen(true)
+      setActive((i) => (i - 1 + suggestions.length) % suggestions.length)
+    } else if (e.key === 'Enter' && open && !selected) {
+      e.preventDefault()
+      choose(suggestions[active])
+    } else if (e.key === 'Escape') {
+      setOpen(false)
+    }
+  }
+
+  const showList = open && suggestions.length > 0 && !selected
+
+  return (
+    <form className="country-form" onSubmit={submit}>
+      <div className="combobox">
+        <label htmlFor={`${listId}-input`} className="visually-hidden">
+          Country
+        </label>
+        <input
+          id={`${listId}-input`}
+          className="text-input"
+          type="text"
+          role="combobox"
+          aria-expanded={showList}
+          aria-controls={listId}
+          aria-autocomplete="list"
+          aria-activedescendant={showList ? `${listId}-${active}` : undefined}
+          autoComplete="off"
+          placeholder="Start typing a country…"
+          value={query}
+          disabled={disabled}
+          onChange={(e) => {
+            setQuery(e.target.value)
+            setOpen(true)
+            setActive(0)
+          }}
+          onKeyDown={handleKeyDown}
+          onFocus={() => setOpen(true)}
+          onBlur={() => setOpen(false)}
+        />
+        {showList && (
+          <ul className="suggestions" id={listId} role="listbox">
+            {suggestions.map((c, i) => (
+              <li
+                key={c.code}
+                id={`${listId}-${i}`}
+                role="option"
+                aria-selected={i === active}
+                className={`suggestion ${i === active ? 'suggestion-active' : ''}`}
+                // mousedown fires before the input's blur, so the list is still there to click.
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  choose(c)
+                }}
+              >
+                {c.name}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <button type="submit" className="button" disabled={disabled || !selected}>
+        Guess
+      </button>
+    </form>
+  )
+}

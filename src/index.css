@@ -366,3 +366,72 @@ input {
 .reveal-equivalent {
   margin: 0;
 }
+
+.country-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.combobox {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+.suggestions {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.suggestion {
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.suggestion-active,
+.suggestion:hover {
+  background: var(--surface-2);
+}
+
+.origin-guess {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.origin-correct {
+  border-color: var(--good);
+}
+
+.origin-name {
+  font-weight: 600;
+}
+
+.origin-result {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.origin-arrow {
+  font-size: 1.3rem;
+  line-height: 1;
+}
