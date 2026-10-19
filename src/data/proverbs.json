@@ -26,7 +26,7 @@
       "It's about how small things, repeated, add up to something large."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "jp-saru-mo-ki",
@@ -55,7 +55,7 @@
       "It's about how even the most skilled people get things wrong."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "es-camaron-que-se-duerme",
@@ -82,7 +82,7 @@
       "It's about missing out because you weren't alert."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ur-bandar-kya-jaane",
@@ -109,7 +109,7 @@
       "It's about people who can't appreciate something good."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "gr-glossa-kokala",
@@ -126,9 +126,9 @@
       "Be careful what you say because words wound",
       "Saying hurtful things can be as bad as violence"
     ],
-    "englishEquivalent": "The tongue is sharper than the sword.",
+    "englishEquivalent": "Words can cut deeper than knives.",
     "englishEquivalents": [
-      "The tongue is sharper than the sword"
+      "Words can cut deeper than knives"
     ],
     "hints": [
       "The tongue here stands for something it produces.",
@@ -136,7 +136,7 @@
       "It's about how words can wound as badly as violence."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "sw-usipoziba-ufa",
@@ -164,7 +164,7 @@
       "It's about fixing small problems before they grow."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "zh-hua-she-tian-zu",
@@ -193,7 +193,7 @@
       "It's about ruining something by adding what isn't needed."
     ],
     "difficulty": "hard",
-    "verified": false
+    "verified": true
   },
   {
     "id": "fr-petit-a-petit",
@@ -220,13 +220,13 @@
       "It's about patience and gradual effort paying off."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "fa-mar-gazideh",
     "original": "مار گزیده از ریسمان سیاه و سفید می‌ترسد",
     "language": "Persian",
-    "acceptedCountries": ["IR", "AF"],
+    "acceptedCountries": ["IR", "AF", "TJ"],
     "literal": "Someone bitten by a snake is afraid of a black-and-white rope.",
     "meanings": [
       "After a bad experience, people become fearful of anything similar",
@@ -248,7 +248,7 @@
       "It's about becoming wary after being hurt once."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "vi-an-qua-nho",
@@ -275,7 +275,7 @@
       "It's about gratitude."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "tr-uzum-uzume",
@@ -304,7 +304,7 @@
       "It's about becoming like the people around you."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "pl-nie-chwal-dnia",
@@ -332,7 +332,7 @@
       "It's about not celebrating until something is truly over."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ko-nanmareun-saega",
@@ -359,13 +359,13 @@
       "It's about being careful what you say, because it can be overheard."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ur-door-ke-dhol",
     "original": "دور کے ڈھول سہانے",
     "language": "Urdu",
-    "acceptedCountries": ["PK", "IN"],
+    "acceptedCountries": ["PK", "IN", "IR", "AF"],
     "literal": "Drums sound pleasant from far away.",
     "meanings": [
       "Things seem better from a distance than they really are",
@@ -386,7 +386,7 @@
       "It's about things looking better from a distance."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "pt-agua-mole",
@@ -413,13 +413,13 @@
       "It's about persistence beating resistance."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ar-eg-elly-eidoh-fel-maya",
     "original": "اللي إيده في المية مش زي اللي إيده في النار",
     "language": "Egyptian Arabic",
-    "acceptedCountries": ["EG"],
+    "acceptedCountries": ["EG", "JO", "LB", "SY", "PS"],
     "literal": "The one whose hand is in the water is not like the one whose hand is in the fire.",
     "meanings": [
       "Someone in comfort can't understand the suffering of someone in trouble",
@@ -441,7 +441,7 @@
       "It's about how people who aren't suffering can't truly understand those who are."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "jp-isogaba-maware",
@@ -469,7 +469,7 @@
       "It's about how rushing often ends up slowing you down."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ga-is-minic-a-bhris",
@@ -497,7 +497,7 @@
       "It's about how what you say can come back to hurt you."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "th-nam-khuen-hai-reep-tak",
@@ -525,7 +525,7 @@
       "It's about seizing an opportunity before it disappears."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ur-ab-pachtaye-kya",
@@ -553,31 +553,60 @@
       "It's about how regret is useless once it's too late."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
-    "id": "it-chi-va-piano",
-    "original": "Chi va piano va sano e va lontano.",
-    "language": "Italian",
-    "acceptedCountries": ["IT", "SM"],
-    "literal": "Whoever goes slowly goes safely and goes far.",
+    "id": "tr-dost-aci-soyler",
+    "original": "Dost acı söyler.",
+    "language": "Turkish",
+    "acceptedCountries": ["TR"],
+    "literal": "A friend speaks bitter words.",
     "meanings": [
-      "Being slow and careful gets you further than rushing",
-      "Steady, cautious progress leads to lasting success",
-      "Take your time and you will avoid trouble and succeed",
-      "Slow and steady wins",
-      "Patience gets you further than haste",
-      "Take your time and you will succeed",
-      "Careful and steady beats fast and reckless"
+      "A true friend tells you the hard truth",
+      "Real friends are honest even when it hurts",
+      "Someone who cares about you will tell you unpleasant truths",
+      "True friends tell you the truth",
+      "A real friend is honest with you",
+      "Friends tell you what you need to hear, not what you want to hear",
+      "Honest criticism comes from people who care"
     ],
-    "englishEquivalent": "Slow and steady wins the race.",
+    "englishEquivalent": "Faithful are the wounds of a friend.",
     "englishEquivalents": [
-      "Slow and steady wins the race"
+      "Faithful are the wounds of a friend",
+      "The truth hurts"
     ],
     "hints": [
-      "Speed isn't everything on a long journey.",
-      "It's said to someone in too much of a rush.",
-      "It's about careful, steady progress beating haste."
+      "Bitter here means unpleasant to hear, not angry.",
+      "A flatterer would tell you only what you want to hear.",
+      "It's about honesty being a sign of real friendship."
+    ],
+    "difficulty": "easy",
+    "verified": true
+  },
+  {
+    "id": "it-tra-il-dire-e-il-fare",
+    "original": "Tra il dire e il fare c’è di mezzo il mare.",
+    "language": "Italian",
+    "acceptedCountries": ["IT", "SM"],
+    "literal": "Between saying and doing, there is the sea.",
+    "meanings": [
+      "It is much easier to say something than to actually do it",
+      "Making promises is easy, but keeping them is hard",
+      "Talking about a plan is very different from carrying it out",
+      "Saying is easy, doing is hard",
+      "Words are easy, actions are difficult",
+      "Good intentions often don’t turn into action",
+      "There is a big gap between what people say and what they do"
+    ],
+    "englishEquivalent": "Easier said than done.",
+    "englishEquivalents": [
+      "Easier said than done",
+      "Talk is cheap"
+    ],
+    "hints": [
+      "The sea is something hard to cross.",
+      "It is often said to someone making big promises or plans.",
+      "It is about the gap between talking about something and actually doing it."
     ],
     "difficulty": "easy",
     "verified": false
@@ -608,7 +637,7 @@
       "It's about the strength of standing together."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "id-air-beriak",
@@ -635,35 +664,7 @@
       "It's about how noisy people are often shallow."
     ],
     "difficulty": "medium",
-    "verified": false
-  },
-  {
-    "id": "tr-dost-aci-soyler",
-    "original": "Dost acı söyler.",
-    "language": "Turkish",
-    "acceptedCountries": ["TR"],
-    "literal": "A friend speaks bitter words.",
-    "meanings": [
-      "A true friend tells you the hard truth",
-      "Real friends are honest even when it hurts",
-      "Someone who cares about you will tell you unpleasant truths",
-      "True friends tell you the truth",
-      "A real friend is honest with you",
-      "Friends tell you what you need to hear, not what you want to hear",
-      "Honest criticism comes from people who care"
-    ],
-    "englishEquivalent": "Faithful are the wounds of a friend.",
-    "englishEquivalents": [
-      "Faithful are the wounds of a friend",
-      "The truth hurts"
-    ],
-    "hints": [
-      "Bitter here means unpleasant to hear, not angry.",
-      "A flatterer would tell you only what you want to hear.",
-      "It's about honesty being a sign of real friendship."
-    ],
-    "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ru-bez-truda",
@@ -691,7 +692,34 @@
       "It's about how everything worthwhile takes effort."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
+  },
+  {
+    "id": "tr-agac-yas-iken",
+    "original": "Ağaç yaşken eğilir.",
+    "language": "Turkish",
+    "acceptedCountries": ["TR"],
+    "literal": "A tree is bent while it is still young.",
+    "meanings": [
+      "It is easiest to shape and teach people when they are young",
+      "Habits and character should be formed in childhood",
+      "Teach children early, because adults are hard to change",
+      "Teach people while they are young",
+      "Children learn best when they are young",
+      "It is hard to change someone once they are grown",
+      "Good habits must be taught early"
+    ],
+    "englishEquivalent": "You can't teach an old dog new tricks.",
+    "englishEquivalents": [
+      "You can’t teach an old dog new tricks"
+    ],
+    "hints": [
+      "Try bending an old, thick trunk.",
+      "It's usually said about raising children.",
+      "It's about shaping people while they are young."
+    ],
+    "difficulty": "medium",
+    "verified": true
   },
   {
     "id": "mi-na-to-rourou",
@@ -718,7 +746,7 @@
       "It's about everyone contributing so the group can flourish."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "zh-san-ge-heshang",
@@ -746,62 +774,7 @@
       "It's about how shared responsibility can mean nobody does the work."
     ],
     "difficulty": "hard",
-    "verified": false
-  },
-  {
-    "id": "tl-ang-hindi-lumingon",
-    "original": "Ang hindi lumingon sa pinanggalingan ay hindi makararating sa paroroonan.",
-    "language": "Tagalog",
-    "acceptedCountries": ["PH"],
-    "literal": "One who does not look back at where they came from will not reach where they are going.",
-    "meanings": [
-      "Never forget your roots or the people who helped you",
-      "Remembering your origins is necessary for success",
-      "You should honour your past and humble beginnings",
-      "Remember where you came from",
-      "Respect where you came from",
-      "Stay humble and remember your origins",
-      "Don’t forget the people who helped you get where you are"
-    ],
-    "englishEquivalent": "Don't forget your roots.",
-    "englishEquivalents": [
-      "Don’t forget your roots",
-      "Never forget where you came from"
-    ],
-    "hints": [
-      "This isn't about directions on a road.",
-      "It's often said to people who move away or become successful.",
-      "It's about remembering and respecting where you came from."
-    ],
-    "difficulty": "medium",
-    "verified": false
-  },
-  {
-    "id": "tr-agac-yas-iken",
-    "original": "Ağaç yaş iken eğilir.",
-    "language": "Turkish",
-    "acceptedCountries": ["TR"],
-    "literal": "A tree is bent while it is still young.",
-    "meanings": [
-      "It is easiest to shape and teach people when they are young",
-      "Habits and character should be formed in childhood",
-      "Teach children early, because adults are hard to change",
-      "Teach people while they are young",
-      "Children learn best when they are young",
-      "It is hard to change someone once they are grown",
-      "Good habits must be taught early"
-    ],
-    "englishEquivalent": "You can't teach an old dog new tricks.",
-    "englishEquivalents": [
-      "You can’t teach an old dog new tricks"
-    ],
-    "hints": [
-      "Try bending an old, thick trunk.",
-      "It's usually said about raising children.",
-      "It's about shaping people while they are young."
-    ],
-    "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ur-ek-aur-ek-gyarah",
@@ -829,6 +802,34 @@
       "It's about cooperation making you far stronger than the sum of the parts."
     ],
     "difficulty": "hard",
-    "verified": false
+    "verified": true
+  },
+  {
+    "id": "tl-ang-hindi-lumingon",
+    "original": "Ang hindi lumingon sa pinanggalingan ay hindi makararating sa paroroonan.",
+    "language": "Tagalog",
+    "acceptedCountries": ["PH"],
+    "literal": "One who does not look back at where they came from will not reach where they are going.",
+    "meanings": [
+      "Never forget your roots or the people who helped you",
+      "Remembering your origins is necessary for success",
+      "You should honour your past and humble beginnings",
+      "Remember where you came from",
+      "Respect where you came from",
+      "Stay humble and remember your origins",
+      "Don’t forget the people who helped you get where you are"
+    ],
+    "englishEquivalent": "Don't forget your roots.",
+    "englishEquivalents": [
+      "Don’t forget your roots",
+      "Never forget where you came from"
+    ],
+    "hints": [
+      "This isn't about directions on a road.",
+      "It's often said to people who move away or become successful.",
+      "It's about remembering and respecting where you came from."
+    ],
+    "difficulty": "medium",
+    "verified": true
   }
 ]
