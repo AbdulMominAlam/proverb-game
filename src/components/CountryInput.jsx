@@ -1,5 +1,6 @@
-import { useId, useMemo, useState } from 'react'
+import { useId, useMemo, useRef, useState } from 'react'
 import countries from '../data/countries.json'
+import { useKeepAboveKeyboard } from '../lib/keyboard.js'
 
 const MAX_SUGGESTIONS = 8
 
@@ -40,6 +41,9 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState(0)
   const listId = useId()
+  const inputRef = useRef(null)
+  // Each guess adds a row above the input, pushing it down towards the keyboard.
+  useKeepAboveKeyboard(inputRef, excludedCodes.length)
   const excluded = useMemo(() => new Set(excludedCodes), [excludedCodes])
   const suggestions = useMemo(() => suggest(query, excluded), [query, excluded])
 
@@ -87,6 +91,7 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
         </label>
         <input
           id={`${listId}-input`}
+          ref={inputRef}
           className="text-input"
           type="text"
           role="combobox"

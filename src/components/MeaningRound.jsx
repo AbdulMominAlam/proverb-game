@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { MAX_MEANING_ATTEMPTS } from '../config.js'
+import { useKeepAboveKeyboard } from '../lib/keyboard.js'
 import HintList from './HintList.jsx'
 import HotColdBar from './HotColdBar.jsx'
 import ModelLoading from './ModelLoading.jsx'
@@ -15,6 +16,8 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
   const [scoring, setScoring] = useState(false)
   const [message, setMessage] = useState(null)
   const inputRef = useRef(null)
+  // Each scored guess adds a card above the input, pushing it down towards the keyboard.
+  useKeepAboveKeyboard(inputRef, meaning.guesses.length)
 
   const ready = embedder.status === 'ready'
   const attempt = meaning.guesses.length + 1

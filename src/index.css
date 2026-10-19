@@ -79,7 +79,8 @@ input {
 .app {
   max-width: 480px;
   margin: 0 auto;
-  padding: 0 16px calc(48px + env(safe-area-inset-bottom));
+  /* --keyboard-inset leaves room to scroll a focused field above the on-screen keyboard. */
+  padding: 0 16px calc(48px + env(safe-area-inset-bottom) + var(--keyboard-inset, 0px));
 }
 
 .header {
