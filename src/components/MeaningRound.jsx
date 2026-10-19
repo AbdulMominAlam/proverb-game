@@ -67,7 +67,6 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
 
       {!meaning.done && (
         <>
-          <ModelLoading status={embedder.status} progress={embedder.progress} error={embedder.error} />
           <form className="guess-form" onSubmit={handleSubmit}>
             <label htmlFor="meaning-input" className="visually-hidden">
               Your guess at the meaning
@@ -90,6 +89,8 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
             </button>
           </form>
           {message && <p className="form-message">{message}</p>}
+          {/* Below the input, so the input doesn't jump when the notice disappears. */}
+          <ModelLoading status={embedder.status} progress={embedder.progress} error={embedder.error} />
           <HintList
             hints={proverb.hints}
             hintsUsed={meaning.hintsUsed}

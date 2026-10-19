@@ -158,7 +158,7 @@ input {
 }
 
 .model-loading {
-  margin-top: 20px;
+  margin-top: 12px;
   padding: 14px 16px;
   border-radius: 12px;
   background: var(--surface-2);
