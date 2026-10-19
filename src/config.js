@@ -6,7 +6,7 @@ export const GAME_NAME = 'Proverb'
 export const LAUNCH_DATE = '2026-10-19'
 
 // Cosine similarity at or above which a meaning guess counts as solved.
-export const SOLVE_THRESHOLD = 0.65
+export const SOLVE_THRESHOLD = 0.62
 
 export const MAX_MEANING_ATTEMPTS = 5
 export const MAX_ORIGIN_ATTEMPTS = 3
