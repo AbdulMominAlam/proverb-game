@@ -4,7 +4,7 @@ import { toPercent } from '../lib/scoring.js'
 import { buildShareText } from '../lib/share.js'
 import ShareButton from './ShareButton.jsx'
 
-export default function ResultsScreen({ game, proverb, children }) {
+export default function ResultsScreen({ game, proverb, alreadyPlayed, children }) {
   const { meaning, origin } = game
   const best = Math.max(...meaning.guesses.map((g) => g.similarity))
   const shareText = buildShareText(game, proverb)
@@ -14,6 +14,9 @@ export default function ResultsScreen({ game, proverb, children }) {
       <h2 id="results-heading" className="results-heading">
         {meaning.solved ? 'Nicely done!' : 'Better luck tomorrow'}
       </h2>
+      {alreadyPlayed && (
+        <p className="results-note muted small">You've already played today's proverb. Here's how you did.</p>
+      )}
 
       <div className="results-proverb">
         <p className="results-original" dir="auto">{proverb.original}</p>
