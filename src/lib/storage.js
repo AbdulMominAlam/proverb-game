@@ -2,6 +2,7 @@ import { newGame } from './gameState.js'
 
 const GAME_KEY = 'proverb-game:v1:game'
 const STATS_KEY = 'proverb-game:v1:stats'
+const HOW_TO_PLAY_KEY = 'proverb-game:v1:seen-how-to-play'
 
 // localStorage can throw (private mode, blocked storage), so every access is guarded.
 function read(key) {
@@ -26,6 +27,7 @@ if (import.meta.env.DEV && new URLSearchParams(window.location.search).has('rese
   try {
     localStorage.removeItem(GAME_KEY)
     localStorage.removeItem(STATS_KEY)
+    localStorage.removeItem(HOW_TO_PLAY_KEY)
   } catch {
     // ignore
   }
@@ -71,4 +73,13 @@ export function recordResult(puzzleNumber, won) {
 // The stored streak goes stale if a day was skipped; only count it if it's still alive.
 export function displayedStreak(stats, puzzleNumber) {
   return stats.lastWon != null && stats.lastWon >= puzzleNumber - 1 ? stats.currentStreak : 0
+}
+
+// The how-to-play card shows on the first visit only. If storage is unavailable it just shows again.
+export function hasSeenHowToPlay() {
+  return read(HOW_TO_PLAY_KEY) === true
+}
+
+export function markHowToPlaySeen() {
+  write(HOW_TO_PLAY_KEY, true)
 }

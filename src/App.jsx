@@ -1,13 +1,14 @@
 import { Suspense, lazy, useEffect, useReducer, useState } from 'react'
 import Countdown from './components/Countdown.jsx'
 import Header from './components/Header.jsx'
+import HowToPlay from './components/HowToPlay.jsx'
 import MeaningRound, { MeaningReveal } from './components/MeaningRound.jsx'
 import ProverbCard from './components/ProverbCard.jsx'
 import ResultsScreen from './components/ResultsScreen.jsx'
 import StatsPanel, { StatsGrid } from './components/StatsPanel.jsx'
 import { getDailyPuzzle } from './lib/daily.js'
 import { gameReducer, isGameOver } from './lib/gameState.js'
-import { loadGame, loadStats, recordResult, saveGame } from './lib/storage.js'
+import { hasSeenHowToPlay, loadGame, loadStats, markHowToPlaySeen, recordResult, saveGame } from './lib/storage.js'
 import { useEmbedder } from './lib/useEmbedder.js'
 
 // The origin round brings the world map with it, so it loads only when needed.
@@ -30,6 +31,7 @@ export default function App() {
     game.meaning.done ? recordResult(puzzleNumber, game.meaning.solved) : loadStats(),
   )
   const [showStats, setShowStats] = useState(false)
+  const [showHowToPlay, setShowHowToPlay] = useState(() => !hasSeenHowToPlay())
   // A guess can match a plain paraphrase or a well-known English idiom with the same meaning.
   const [scoringTargets] = useState(() => [...proverb.meanings, ...proverb.englishEquivalents])
   const embedder = useEmbedder(scoringTargets, { enabled: !game.meaning.done })
@@ -47,7 +49,7 @@ export default function App() {
 
   return (
     <div className={`app ${screen === 'origin' ? 'app-wide' : ''}`}>
-      <Header puzzleNumber={puzzleNumber} onStats={() => setShowStats(true)} />
+      <Header puzzleNumber={puzzleNumber} onHelp={() => setShowHowToPlay(true)} onStats={() => setShowStats(true)} />
       <main className="main">
         {screen === 'results' && isGameOver(game) ? (
           <ResultsScreen game={game} proverb={proverb} alreadyPlayed={alreadyPlayed}>
@@ -82,6 +84,14 @@ export default function App() {
         )}
       </main>
       {showStats && <StatsPanel stats={stats} puzzleNumber={puzzleNumber} onClose={() => setShowStats(false)} />}
+      {showHowToPlay && (
+        <HowToPlay
+          onClose={() => {
+            markHowToPlaySeen()
+            setShowHowToPlay(false)
+          }}
+        />
+      )}
     </div>
   )
 }
