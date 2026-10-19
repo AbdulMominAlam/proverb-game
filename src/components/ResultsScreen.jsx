@@ -7,7 +7,7 @@ import ShareButton from './ShareButton.jsx'
 export default function ResultsScreen({ game, proverb, alreadyPlayed, children }) {
   const { meaning, origin } = game
   const best = Math.max(...meaning.guesses.map((g) => g.similarity))
-  const shareText = buildShareText(game, proverb)
+  const shareText = buildShareText(game)
 
   return (
     <section className="results" aria-labelledby="results-heading">
