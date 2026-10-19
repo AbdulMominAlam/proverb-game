@@ -179,6 +179,10 @@ input {
   color: var(--bad);
 }
 
+.model-loading-detail {
+  overflow-wrap: anywhere;
+}
+
 .progress-track {
   height: 6px;
   border-radius: 999px;

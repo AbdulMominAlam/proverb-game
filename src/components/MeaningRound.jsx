@@ -103,7 +103,12 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
           </form>
           {message && <p className="form-message">{message}</p>}
           {/* Below the input, so the input doesn't jump when the notice disappears. */}
-          <ModelLoading status={embedder.status} progress={embedder.progress} error={embedder.error} />
+          <ModelLoading
+            status={embedder.status}
+            progress={embedder.progress}
+            error={embedder.error}
+            onRetry={embedder.retry}
+          />
           <HintList
             hints={proverb.hints}
             hintsUsed={meaning.hintsUsed}

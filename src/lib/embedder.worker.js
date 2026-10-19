@@ -4,6 +4,7 @@
 // Messages out: { type: 'progress', progress }  { type: 'ready' }
 //               { type: 'score', id, similarity }  { type: 'error', id?, message }
 import { env, pipeline } from '@huggingface/transformers'
+import { createModelFetch, createSafeCache, probeSize } from './modelDownloads.js'
 import asyncifyMjs from 'onnxruntime-web/ort-wasm-simd-threaded.asyncify.mjs?url'
 import asyncifyWasm from 'onnxruntime-web/ort-wasm-simd-threaded.asyncify.wasm?url'
 import plainMjs from 'onnxruntime-web/ort-wasm-simd-threaded.mjs?url'
@@ -32,6 +33,27 @@ if (wasm.wasmPaths && typeof wasm.wasmPaths === 'object') {
   }
 }
 
+// The quantized model file for dtype 'q8' (see init below).
+const MODEL_DTYPE = 'q8'
+const MODEL_FILE = 'onnx/model_quantized.onnx'
+
+// Cache failures (private windows, full storage) skip caching instead of failing the load.
+env.useCustomCache = true
+env.customCache = createSafeCache('transformers-cache')
+
+// Progress covers the two large downloads, the model and the ONNX runtime, whose sizes are
+// probed before loading starts so the bar can't jump back or fill early.
+const sizes = new Map() // url -> bytes
+const loadedBytes = new Map() // url -> bytes
+function reportProgress(url, loaded) {
+  if (!sizes.has(url)) return
+  loadedBytes.set(url, loaded)
+  const total = [...sizes.values()].reduce((a, b) => a + b, 0)
+  const done = [...loadedBytes.values()].reduce((a, b) => a + b, 0)
+  self.postMessage({ type: 'progress', progress: Math.min(100, (done / total) * 100) })
+}
+env.fetch = createModelFetch({ sizeOf: (url) => sizes.get(url), onProgress: reportProgress })
+
 let extractorPromise = null
 let targetVectors = null
 
@@ -47,16 +69,22 @@ function dot(a, b) {
   return sum
 }
 
+async function measureDownloads(model) {
+  const modelFileUrl = new URL(`${env.localModelPath}${model}/${MODEL_FILE}`, self.location.href).href
+  const urls = [modelFileUrl, wasm.wasmPaths?.wasm].filter(Boolean)
+  const found = await Promise.all(urls.map(probeSize))
+  urls.forEach((url, i) => found[i] && sizes.set(url, found[i]))
+}
+
 async function init(model, targets) {
-  extractorPromise ??= pipeline('feature-extraction', model, {
-    dtype: 'q8',
-    progress_callback: (info) => {
-      if (info.status === 'progress_total') {
-        self.postMessage({ type: 'progress', progress: info.progress })
-      }
-    },
+  if (!extractorPromise) {
+    await measureDownloads(model)
+    extractorPromise = pipeline('feature-extraction', model, { dtype: MODEL_DTYPE })
+  }
+  const extractor = await extractorPromise.catch((err) => {
+    extractorPromise = null // let a later init try again
+    throw env.fetch.lastError ?? err // the real download failure, not the library's wrapper error
   })
-  const extractor = await extractorPromise
   targetVectors = await embed(extractor, targets)
   self.postMessage({ type: 'ready' })
 }
@@ -71,6 +99,8 @@ async function score(id, text) {
 self.addEventListener('message', ({ data }) => {
   const task = data.type === 'init' ? init(data.model, data.targets) : score(data.id, data.text)
   task.catch((err) => {
+    // The download helpers already logged each failed attempt with its URL and reason.
+    console.error('[meaning checker] Failed:', err)
     self.postMessage({ type: 'error', id: data.id, message: String(err?.message ?? err) })
   })
 })

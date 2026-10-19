@@ -1,9 +1,14 @@
-export default function ModelLoading({ status, progress, error }) {
+export default function ModelLoading({ status, progress, error, onRetry }) {
   if (status === 'error') {
     return (
       <div className="model-loading model-loading-error" role="alert">
-        <p>Couldn't load the meaning checker. Check your connection and reload the page.</p>
-        {error && <p className="small muted">{error}</p>}
+        <p>Couldn't load the meaning checker. Check your connection and try again.</p>
+        {error && <p className="small muted model-loading-detail">{error}</p>}
+        {onRetry && (
+          <button type="button" className="button" onClick={onRetry}>
+            Try again
+          </button>
+        )}
       </div>
     )
   }
