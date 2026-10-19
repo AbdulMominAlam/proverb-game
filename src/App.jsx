@@ -46,7 +46,7 @@ export default function App() {
   }
 
   return (
-    <div className="app">
+    <div className={`app ${screen === 'origin' ? 'app-wide' : ''}`}>
       <Header puzzleNumber={puzzleNumber} onStats={() => setShowStats(true)} />
       <main className="main">
         {screen === 'results' && isGameOver(game) ? (

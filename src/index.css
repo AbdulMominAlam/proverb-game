@@ -496,6 +496,82 @@ input {
   gap: 14px;
 }
 
+.origin-map {
+  border-radius: 14px;
+  background: var(--map-sea);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.origin-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.map-land {
+  fill: var(--map-land);
+}
+
+.map-borders {
+  fill: none;
+  stroke: var(--map-border);
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+}
+
+.map-country {
+  stroke: var(--map-border);
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+  transition: fill 0.4s ease;
+}
+
+.map-latest {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.map-dot {
+  stroke: var(--surface);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.map-dot-latest {
+  stroke: var(--text);
+}
+
+.origin-side .guess-list + .country-form {
+  margin-top: 10px;
+}
+
+/* Desktop: map beside the guesses. Only the origin round widens; the rest stays a reading column. */
+@media (min-width: 768px) {
+  .app-wide {
+    max-width: 960px;
+  }
+
+  .app-wide .header,
+  .app-wide .proverb-card,
+  .app-wide .main > .reveal {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .origin-layout {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: start;
+    gap: 20px;
+  }
+
+  .origin-side .country-form {
+    margin-top: 0;
+  }
+}
 
 .results-heading {
   margin: 0 0 16px;
@@ -669,57 +745,4 @@ input {
 
 .dialog .stats-grid {
   margin: 8px 0 16px;
-}
-
-.origin-map {
-  border-radius: 14px;
-  background: var(--map-sea);
-  border: 1px solid var(--border);
-  overflow: hidden;
-}
-
-.origin-map svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.map-land {
-  fill: var(--map-land);
-}
-
-.map-borders {
-  fill: none;
-  stroke: var(--map-border);
-  stroke-width: 0.6;
-  vector-effect: non-scaling-stroke;
-}
-
-.map-country {
-  stroke: var(--map-border);
-  stroke-width: 0.6;
-  vector-effect: non-scaling-stroke;
-  transition: fill 0.4s ease;
-}
-
-.map-latest {
-  fill: none;
-  stroke: var(--text);
-  stroke-width: 1.5;
-  vector-effect: non-scaling-stroke;
-}
-
-.map-dot {
-  stroke: var(--surface);
-  stroke-width: 1.5;
-  vector-effect: non-scaling-stroke;
-}
-
-.map-dot-latest {
-  stroke: var(--text);
-}
-
-
-.origin-side .guess-list + .country-form {
-  margin-top: 10px;
 }
