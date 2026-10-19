@@ -1,4 +1,4 @@
-import { GAME_NAME } from '../config.js'
+import { GAME_NAME, SITE_URL } from '../config.js'
 import { BAND_EMOJI, closenessBand } from './heat.js'
 import { RATING_EMOJI, ratingFor } from './scoring.js'
 
@@ -17,5 +17,6 @@ export function buildShareText(game) {
     `${GAME_NAME} #${game.puzzleNumber}`,
     `🧠 ${meaning} (${hintsLabel(game.meaning.hintsUsed)})`,
     `🌍 ${origin}${originEnd}`,
+    SITE_URL,
   ].join('\n')
 }

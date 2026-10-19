@@ -2,6 +2,9 @@
 
 export const GAME_NAME = 'Proverb'
 
+// Public address of the game, used in the share text and link previews (no trailing slash).
+export const SITE_URL = 'https://proverb-game-nine.vercel.app'
+
 // Puzzle #1 is played on this local date (YYYY-MM-DD).
 export const LAUNCH_DATE = '2026-10-19'
 
