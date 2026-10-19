@@ -13,6 +13,13 @@
   --tier-warm: #c9932b;
   --tier-hot: #d2553a;
   --tier-solved: var(--good);
+  --map-sea: #e9e3d6;
+  --map-land: #cfc9bd;
+  --map-border: #f6f2ea;
+  --heat-1: #b3261e;
+  --heat-2: #ea7a2a;
+  --heat-3: #f1c54b;
+  --heat-4: #f7e9c9;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.05);
   --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
   --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -40,6 +47,13 @@
     --tier-cold: #6f9fd6;
     --tier-warm: #e0b04f;
     --tier-hot: #e8775b;
+    --map-sea: #1b1c19;
+    --map-land: #3d3e38;
+    --map-border: #1b1c19;
+    --heat-1: #e5483b;
+    --heat-2: #ef8a3a;
+    --heat-3: #e2bd57;
+    --heat-4: #9a8c70;
     --shadow: none;
   }
 }
@@ -647,3 +661,52 @@ input {
 .dialog .stats-grid {
   margin: 8px 0 16px;
 }
+
+.origin-map {
+  border-radius: 14px;
+  background: var(--map-sea);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.origin-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.map-land {
+  fill: var(--map-land);
+}
+
+.map-borders {
+  fill: none;
+  stroke: var(--map-border);
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+}
+
+.map-country {
+  stroke: var(--map-border);
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+  transition: fill 0.4s ease;
+}
+
+.map-latest {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.map-dot {
+  stroke: var(--surface);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.map-dot-latest {
+  stroke: var(--text);
+}
+
