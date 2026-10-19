@@ -6,19 +6,22 @@ const MAX_SUGGESTIONS = 8
 const ROW_HEIGHT = 44
 const LIST_PADDING = 8
 const LIST_GAP = 4
+// The list is placed for its largest size (it scrolls beyond this), never its current one,
+// so the placement can't change as the number of matches changes while typing.
+const LIST_MAX_HEIGHT = 5 * ROW_HEIGHT + LIST_PADDING
+const LIST_MIN_HEIGHT = 2 * ROW_HEIGHT + LIST_PADDING
 
-// Opens the list below the input when it fits above the keyboard, otherwise above the input,
-// and caps its height to the visible space so no suggestion is hidden behind the keyboard.
-function placeList(input, list, count) {
+// Decides once, before the list is first shown, whether it opens below or above the input.
+// Below only if the full-size list fits both above the keyboard and inside the page as it is,
+// so opening it can never make the page taller. Otherwise above, over the map.
+function decidePlacement(input) {
   const { top, bottom } = visibleArea()
   const r = input.getBoundingClientRect()
-  const spaceBelow = bottom - r.bottom - LIST_GAP - LIST_PADDING
-  const spaceAbove = r.top - top - LIST_GAP - LIST_PADDING
-  const needed = count * ROW_HEIGHT + LIST_PADDING
-  const side = spaceBelow >= needed || spaceBelow >= spaceAbove ? 'below' : 'above'
-  const room = side === 'below' ? spaceBelow : spaceAbove
-  list.dataset.side = side
-  list.style.maxHeight = `${Math.max(ROW_HEIGHT * 2 + LIST_PADDING, Math.min(room, needed))}px`
+  const pageBottom = document.documentElement.scrollHeight - window.scrollY
+  const spaceBelow = Math.min(bottom, pageBottom) - r.bottom - LIST_GAP
+  if (spaceBelow >= LIST_MAX_HEIGHT) return { side: 'below', maxHeight: LIST_MAX_HEIGHT }
+  const spaceAbove = r.top - top - LIST_GAP
+  return { side: 'above', maxHeight: Math.max(LIST_MIN_HEIGHT, Math.min(spaceAbove, LIST_MAX_HEIGHT)) }
 }
 
 const fold = (s) =>
@@ -59,6 +62,10 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
   const [active, setActive] = useState(0)
   const listId = useId()
   const inputRef = useRef(null)
+  const listRef = useRef(null)
+  // Placement for this focus session: decided when the list first opens, kept while typing,
+  // forgotten on blur or after a guess (when the page layout may have changed).
+  const placementRef = useRef(null)
   // Each guess adds a row above the input, pushing it down towards the keyboard.
   useKeepAboveKeyboard(inputRef, excludedCodes.length)
   const excluded = useMemo(() => new Set(excludedCodes), [excludedCodes])
@@ -78,6 +85,7 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
     setQuery('')
     setOpen(false)
     setActive(0)
+    placementRef.current = null
   }
 
   function handleKeyDown(e) {
@@ -99,23 +107,16 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
   }
 
   const showList = open && suggestions.length > 0 && !selected
-  const listRef = useRef(null)
 
+  // Runs only when the list opens, before the browser paints it: no re-measuring while typing,
+  // no scroll listeners, no flipping between above and below.
   useLayoutEffect(() => {
     const list = listRef.current
     if (!showList || !list) return
-    const place = () => placeList(inputRef.current, list, suggestions.length)
-    place()
-    const vv = window.visualViewport
-    vv?.addEventListener('resize', place)
-    vv?.addEventListener('scroll', place)
-    window.addEventListener('scroll', place, { passive: true })
-    return () => {
-      vv?.removeEventListener('resize', place)
-      vv?.removeEventListener('scroll', place)
-      window.removeEventListener('scroll', place)
-    }
-  }, [showList, suggestions.length])
+    placementRef.current ??= decidePlacement(inputRef.current)
+    list.dataset.side = placementRef.current.side
+    list.style.maxHeight = `${placementRef.current.maxHeight}px`
+  }, [showList])
 
   return (
     <form className="country-form" onSubmit={submit}>
@@ -150,7 +151,10 @@ export default function CountryInput({ onSubmit, excludedCodes, disabled }) {
           }}
           onKeyDown={handleKeyDown}
           onFocus={() => setOpen(true)}
-          onBlur={() => setOpen(false)}
+          onBlur={() => {
+            setOpen(false)
+            placementRef.current = null
+          }}
         />
         {showList && (
           <ul className="suggestions" id={listId} role="listbox" ref={listRef}>

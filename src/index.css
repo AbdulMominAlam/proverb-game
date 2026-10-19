@@ -450,6 +450,8 @@ input {
   min-width: 0;
 }
 
+/* Out of normal flow and anchored to the input wrapper, so opening, closing or filtering the
+   list never moves anything else on the page. No transitions or animations here. */
 .suggestions {
   position: absolute;
   z-index: 10;
@@ -468,7 +470,7 @@ input {
   overscroll-behavior: contain;
 }
 
-/* Set by placeList() when there's no room between the input and the keyboard.
+/* Set by decidePlacement() when the full list doesn't fit between the input and the keyboard.
    The best match sits next to the input, where the thumb is. */
 .suggestions[data-side='above'] {
   top: auto;

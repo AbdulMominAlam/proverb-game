@@ -3,6 +3,12 @@ import { useEffect } from 'react'
 // Gap kept between a focused field and the top of the on-screen keyboard.
 const MARGIN = 12
 
+// iOS Safari (and every iOS browser, which all use WebKit). iPadOS reports itself as a Mac.
+export const IS_IOS =
+  typeof navigator !== 'undefined' &&
+  (/iP(hone|ad|od)/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1))
+
 // The visible part of the page in layout-viewport coordinates. With an on-screen keyboard open,
 // the visual viewport is the part of the screen the keyboard doesn't cover.
 export function visibleArea() {
@@ -14,15 +20,20 @@ export function visibleArea() {
 // Publishes the keyboard's height as --keyboard-inset on <html>. On iOS the keyboard covers the page
 // without shrinking it, so the page pads its bottom by this much to leave room to scroll a field
 // above the keyboard. Call once at startup.
+//
+// Only the keyboard's height counts, not where Safari has panned the visible area (offsetTop):
+// otherwise every pan would change the padding, and so the page height, and make Safari pan again.
 export function trackKeyboardInset() {
   const vv = window.visualViewport
   if (!vv) return
+  let current = -1
   const update = () => {
-    const inset = Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop))
+    const inset = Math.max(0, Math.round(window.innerHeight - vv.height))
+    if (inset === current) return
+    current = inset
     document.documentElement.style.setProperty('--keyboard-inset', `${inset}px`)
   }
   vv.addEventListener('resize', update)
-  vv.addEventListener('scroll', update)
   update()
 }
 
@@ -34,8 +45,12 @@ export function revealAboveKeyboard(el) {
   else if (r.top - MARGIN < top) window.scrollBy(0, r.top - MARGIN - top)
 }
 
-// While the field in `ref` is focused, keeps it above the keyboard: when the keyboard opens or
-// resizes, and whenever `trigger` changes (e.g. a new guess pushes the field down the page).
+// While the field in `ref` is focused, keeps it above the keyboard whenever `trigger` changes
+// (e.g. a new guess pushes the field down the page). Elsewhere it also corrects the position when
+// the keyboard opens or resizes.
+//
+// On iOS, Safari's own focus scrolling is left alone: the keyboard's height changes while typing
+// (the predictive bar comes and goes), and scrolling from code in response makes the page jump.
 export function useKeepAboveKeyboard(ref, trigger) {
   useEffect(() => {
     const el = ref.current
@@ -48,8 +63,10 @@ export function useKeepAboveKeyboard(ref, trigger) {
         if (document.activeElement === el) revealAboveKeyboard(el)
       })
     }
-    vv?.addEventListener('resize', update)
-    el.addEventListener('focus', update)
+    if (!IS_IOS) {
+      vv?.addEventListener('resize', update)
+      el.addEventListener('focus', update)
+    }
     update()
     return () => {
       cancelAnimationFrame(frame)
