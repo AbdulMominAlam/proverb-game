@@ -288,7 +288,8 @@ input {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--surface);
-  font-size: 1rem;
+  /* iOS Safari zooms the page when a focused field's text is under 16px. */
+  font-size: max(16px, 1rem);
 }
 
 .text-input:focus {
@@ -664,6 +665,7 @@ input {
   border-radius: 10px;
   background: var(--surface);
   font: inherit;
+  font-size: max(16px, 1rem);
   resize: none;
 }
 
