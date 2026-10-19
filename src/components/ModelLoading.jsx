@@ -16,7 +16,11 @@ export default function ModelLoading({ status, progress, error }) {
         <span className="small muted"> (a one-time ~23 MB download)</span>
       </p>
       <div className="progress-track">
-        <div className="progress-fill" style={{ width: `${Math.round(progress)}%` }} />
+        {progress > 0 ? (
+          <div className="progress-fill" style={{ width: `${Math.round(progress)}%` }} />
+        ) : (
+          <div className="progress-fill progress-indeterminate" />
+        )}
       </div>
     </div>
   )

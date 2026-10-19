@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { MAX_MEANING_ATTEMPTS } from '../config.js'
 import HintList from './HintList.jsx'
 import HotColdBar from './HotColdBar.jsx'
@@ -10,6 +10,7 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
   const [text, setText] = useState('')
   const [scoring, setScoring] = useState(false)
   const [message, setMessage] = useState(null)
+  const inputRef = useRef(null)
 
   const ready = embedder.status === 'ready'
   const attempt = meaning.guesses.length + 1
@@ -32,6 +33,7 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
       setMessage('Something went wrong scoring that guess. Please try again.')
     } finally {
       setScoring(false)
+      inputRef.current?.focus()
     }
   }
 
@@ -45,6 +47,12 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
           </span>
         )}
       </div>
+
+      {meaning.guesses.length === 0 && !meaning.done && (
+        <p className="intro muted">
+          Work out what this proverb means and describe it in your own words. Then guess where it comes from.
+        </p>
+      )}
 
       {meaning.guesses.length > 0 && (
         <ul className="guess-list">
@@ -66,6 +74,7 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
             </label>
             <input
               id="meaning-input"
+              ref={inputRef}
               className="text-input"
               type="text"
               autoComplete="off"
@@ -73,7 +82,8 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
               value={text}
               maxLength={200}
               onChange={(e) => setText(e.target.value)}
-              disabled={!ready || scoring}
+              disabled={!ready}
+              readOnly={scoring}
             />
             <button type="submit" className="button" disabled={!ready || scoring || !text.trim()}>
               {scoring ? 'Checking…' : 'Guess'}

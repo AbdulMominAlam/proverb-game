@@ -4,9 +4,7 @@ import { TIER_LABELS, tierFor, toPercent } from '../lib/scoring.js'
 export default function HotColdBar({ similarity }) {
   const pct = toPercent(similarity)
   const tier = tierFor(similarity)
-  // 0 at cold, 100 at the solve threshold.
-  const heat = Math.round(Math.min(1, Math.max(0, similarity / SOLVE_THRESHOLD)) * 100)
-  const color = tier === 'solved' ? 'var(--good)' : `color-mix(in oklab, var(--hot) ${heat}%, var(--cold))`
+  const color = `var(--tier-${tier})`
 
   return (
     <div className="hotcold">

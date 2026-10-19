@@ -32,7 +32,7 @@ export default function ResultsScreen({ game, proverb, alreadyPlayed, children }
 
       <dl className="results-stats">
         <div>
-          <dt>Best match</dt>
+          <dt>Score</dt>
           <dd>{toPercent(best)}%</dd>
         </div>
         <div>

@@ -23,7 +23,10 @@ export default function App() {
   // 'meaning' -> 'origin' -> 'results'; the player moves on with a button after each round.
   const [screen, setScreen] = useState(() => initialScreen(game))
   const [alreadyPlayed] = useState(() => isGameOver(game))
-  const [stats, setStats] = useState(loadStats)
+  // recordResult is idempotent, so this also covers a finished round whose result wasn't recorded yet.
+  const [stats, setStats] = useState(() =>
+    game.meaning.done ? recordResult(puzzleNumber, game.meaning.solved) : loadStats(),
+  )
   const [showStats, setShowStats] = useState(false)
   const embedder = useEmbedder(proverb.meanings, { enabled: !game.meaning.done })
 
@@ -32,11 +35,11 @@ export default function App() {
   }, [game])
 
   // A win only needs the meaning, so the result is recorded as soon as that round ends.
-  const meaningDone = game.meaning.done
-  const meaningSolved = game.meaning.solved
-  useEffect(() => {
-    if (meaningDone) setStats(recordResult(puzzleNumber, meaningSolved))
-  }, [meaningDone, meaningSolved, puzzleNumber])
+  function act(action) {
+    const next = gameReducer(game, action)
+    dispatch(action)
+    if (next.meaning.done && !game.meaning.done) setStats(recordResult(puzzleNumber, next.meaning.solved))
+  }
 
   return (
     <div className="app">
@@ -56,7 +59,7 @@ export default function App() {
                 <OriginRound
                   proverb={proverb}
                   origin={game.origin}
-                  dispatch={dispatch}
+                  dispatch={act}
                   onContinue={() => setScreen('results')}
                 />
               </>
@@ -65,7 +68,7 @@ export default function App() {
                 proverb={proverb}
                 meaning={game.meaning}
                 embedder={embedder}
-                dispatch={dispatch}
+                dispatch={act}
                 onContinue={() => setScreen('origin')}
               />
             )}
