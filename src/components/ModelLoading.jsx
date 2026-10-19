@@ -13,7 +13,7 @@ export default function ModelLoading({ status, progress, error }) {
     <div className="model-loading" role="status" aria-live="polite">
       <p>
         Warming up the meaning checker…
-        <span className="small muted"> (a one-time ~23 MB download)</span>
+        <span className="small muted"> (a one-time ~30 MB download)</span>
       </p>
       <div className="progress-track">
         {progress > 0 ? (
