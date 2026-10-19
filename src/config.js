@@ -5,6 +5,11 @@ export const GAME_NAME = 'Proverb'
 // Public address of the game, used in the share text and link previews (no trailing slash).
 export const SITE_URL = 'https://proverb-game-nine.vercel.app'
 
+// Used in link previews, the page title and the share image (npm run share-images).
+export const SITE_TAGLINE = 'A proverb from somewhere in the world. What does it mean?'
+export const SITE_DESCRIPTION =
+  'Every day, one proverb from somewhere in the world, translated word for word. Guess what it means, then where it’s from.'
+
 // Puzzle #1 is played on this local date (YYYY-MM-DD).
 export const LAUNCH_DATE = '2026-10-19'
 

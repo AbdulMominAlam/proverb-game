@@ -2,12 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#161714" media="(prefers-color-scheme: dark)" />
     <title>Proverb</title>
     <meta name="description" content="A daily proverb guessing game." />
+
+    <!-- Link previews (WhatsApp, iMessage, X…). Images come from npm run share-images. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="%GAME_NAME%" />
+    <meta property="og:title" content="%GAME_NAME% – A daily proverb puzzle" />
+    <meta property="og:description" content="%SITE_DESCRIPTION%" />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:image" content="%SITE_URL%/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="%GAME_NAME%: a proverb from somewhere in the world, translated literally." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="%GAME_NAME% – A daily proverb puzzle" />
+    <meta name="twitter:description" content="%SITE_DESCRIPTION%" />
+    <meta name="twitter:image" content="%SITE_URL%/og-image.png" />
+    <meta name="twitter:image:alt" content="%GAME_NAME%: a proverb from somewhere in the world, translated literally." />
   </head>
   <body>
     <div id="root"></div>
