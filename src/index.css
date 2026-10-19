@@ -168,3 +168,201 @@ input {
   background: var(--accent);
   transition: width 0.3s ease;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.round {
+  margin-top: 28px;
+}
+
+.round-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.round-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.button {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.button-ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.button-ghost:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+
+.button-wide {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.text-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  font-size: 1rem;
+}
+
+.text-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.guess-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.form-message {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  color: var(--bad);
+}
+
+.guess-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.guess {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.guess-text {
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.hotcold-track {
+  position: relative;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.hotcold-fill {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.5s ease;
+}
+
+.hotcold-target {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  border-radius: 1px;
+  background: var(--muted);
+  opacity: 0.6;
+}
+
+.hotcold-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.hotcold-pct {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.hints {
+  margin-top: 16px;
+}
+
+.hint-list {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.hint-list li {
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: var(--surface-2);
+}
+
+.hint-number {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-right: 4px;
+}
+
+.reveal {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.reveal-good {
+  border-color: var(--good);
+}
+
+.reveal-status {
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.reveal-good .reveal-status {
+  color: var(--good);
+}
+
+.reveal-meaning {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+}
+
+.reveal-equivalent {
+  margin: 0;
+}

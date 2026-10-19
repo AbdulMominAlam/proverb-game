@@ -1,20 +1,22 @@
-import { useState } from 'react'
+import { useReducer, useState } from 'react'
 import Header from './components/Header.jsx'
-import ModelLoading from './components/ModelLoading.jsx'
+import MeaningRound from './components/MeaningRound.jsx'
 import ProverbCard from './components/ProverbCard.jsx'
 import { getDailyPuzzle } from './lib/daily.js'
+import { gameReducer, newGame } from './lib/gameState.js'
 import { useEmbedder } from './lib/useEmbedder.js'
 
 export default function App() {
   const [{ puzzleNumber, proverb }] = useState(() => getDailyPuzzle())
-  const embedder = useEmbedder(proverb.meanings)
+  const [game, dispatch] = useReducer(gameReducer, puzzleNumber, newGame)
+  const embedder = useEmbedder(proverb.meanings, { enabled: !game.meaning.done })
 
   return (
     <div className="app">
       <Header puzzleNumber={puzzleNumber} />
       <main className="main">
         <ProverbCard literal={proverb.literal} />
-        <ModelLoading status={embedder.status} progress={embedder.progress} error={embedder.error} />
+        <MeaningRound proverb={proverb} meaning={game.meaning} embedder={embedder} dispatch={dispatch} />
       </main>
     </div>
   )
