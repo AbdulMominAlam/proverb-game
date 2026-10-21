@@ -50,6 +50,8 @@ The link-preview image and icons are generated files, so regenerate them after a
 npm run share-images   # writes public/og-image.png, favicon.svg, favicon.ico, apple-touch-icon.png
 ```
 
+If the domain changes, also update it in `public/robots.txt` and `public/sitemap.xml`.
+
 ## Adding proverbs
 
 The world has a lot of proverbs. Here's how to add them without breaking anyone's day.

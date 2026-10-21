@@ -10,6 +10,7 @@
     <meta name="theme-color" content="#161714" media="(prefers-color-scheme: dark)" />
     <title>%PAGE_TITLE%</title>
     <meta name="description" content="%SITE_DESCRIPTION%" />
+    <link rel="canonical" href="%SITE_URL%/" />
 
     <!-- Link previews (WhatsApp, iMessage, X…). Images come from npm run share-images. -->
     <meta property="og:type" content="website" />
@@ -27,9 +28,25 @@
     <meta name="twitter:description" content="%SITE_DESCRIPTION%" />
     <meta name="twitter:image" content="%SITE_URL%/og-image.png" />
     <meta name="twitter:image:alt" content="%GAME_NAME%: a proverb from somewhere in the world, translated literally." />
+
+    <script type="application/ld+json">%STRUCTURED_DATA%</script>
   </head>
   <body>
     <div id="root"></div>
+    <!-- Plain text about the game, readable without JavaScript. Never put a puzzle here. -->
+    <footer class="site-about">
+      <h2>About %GAME_NAME%</h2>
+      <p>
+        %GAME_NAME% is a daily proverb game: a new proverb from around the world every day, translated
+        word for word into English. It's a free proverb guessing game you play in your browser.
+      </p>
+      <p>
+        How to play: read the literal translation, then describe what the proverb means in your own
+        words. You get %MAX_MEANING_ATTEMPTS% tries and 3 hints. Next, guess which country it comes
+        from on the world map, where a heat map shows how close each guess is (%MAX_ORIGIN_ATTEMPTS%
+        tries). Share your result and come back tomorrow to keep your streak going.
+      </p>
+    </footer>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

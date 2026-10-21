@@ -77,6 +77,27 @@ input {
   color: inherit;
 }
 
+/* The static "About" text from index.html: there for search engines, quiet for players. */
+.site-about {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px 16px calc(32px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.site-about h2 {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.site-about p {
+  margin: 0 0 8px;
+}
+
 .app {
   max-width: 480px;
   margin: 0 auto;
