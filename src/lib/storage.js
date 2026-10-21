@@ -1,8 +1,9 @@
 import { newGame } from './gameState.js'
 
-const GAME_KEY = 'proverb-game:v1:game'
-const STATS_KEY = 'proverb-game:v1:stats'
-const HOW_TO_PLAY_KEY = 'proverb-game:v1:seen-how-to-play'
+const GAME_KEY = 'proverb-game:v2:game'
+const STATS_KEY = 'proverb-game:v2:stats'
+const HOW_TO_PLAY_KEY = 'proverb-game:v2:seen-how-to-play'
+const LEGACY_KEYS = ['proverb-game:v1:game', 'proverb-game:v1:stats', 'proverb-game:v1:seen-how-to-play']
 
 // localStorage can throw (private mode, blocked storage), so every access is guarded.
 function read(key) {
@@ -20,6 +21,13 @@ function write(key, value) {
   } catch {
     // Progress just won't persist.
   }
+}
+
+// v1 saves are pre-launch test games; drop them so launch starts everyone fresh.
+try {
+  LEGACY_KEYS.forEach((key) => localStorage.removeItem(key))
+} catch {
+  // ignore
 }
 
 // Dev-only: ?reset wipes saved progress and stats.

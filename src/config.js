@@ -11,7 +11,7 @@ export const SITE_DESCRIPTION =
   'Every day, one proverb from somewhere in the world, translated word for word. Guess what it means, then where it’s from.'
 
 // Puzzle #1 is played on this local date (YYYY-MM-DD).
-export const LAUNCH_DATE = '2026-10-19'
+export const LAUNCH_DATE = '2026-10-22'
 
 // Cosine similarity at or above which a meaning guess counts as solved.
 export const SOLVE_THRESHOLD = 0.62

@@ -30,6 +30,19 @@ export function getDailyPuzzle(now = new Date()) {
   return { puzzleNumber, proverb: proverbs[index] }
 }
 
+// Dev-only ?day=N also skips the pre-launch screen.
+export function isBeforeLaunch(now = new Date()) {
+  return devPuzzleOverride() == null && daysSinceLaunch(now) < 0
+}
+
+export function launchDate() {
+  return parseLocalDate(LAUNCH_DATE)
+}
+
+export function msUntilLaunch(now = new Date()) {
+  return launchDate() - now
+}
+
 export function msUntilNextPuzzle(now = new Date()) {
   const next = localMidnight(now)
   next.setDate(next.getDate() + 1)

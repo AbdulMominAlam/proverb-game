@@ -9,9 +9,9 @@ function format(ms) {
   return [h, m, s].map((n) => String(n).padStart(2, '0')).join(':')
 }
 
-export default function Countdown() {
+export default function Countdown({ label = 'Next proverb in', readyText = 'A new proverb is ready', msUntil = msUntilNextPuzzle }) {
   // Fix the target once so the timer hits zero at midnight instead of rolling over.
-  const [target] = useState(() => Date.now() + msUntilNextPuzzle())
+  const [target] = useState(() => Date.now() + msUntil())
   const [now, setNow] = useState(() => Date.now())
 
   useEffect(() => {
@@ -25,12 +25,12 @@ export default function Countdown() {
     <div className="countdown">
       {remaining > 0 ? (
         <>
-          <p className="countdown-label">Next proverb in</p>
+          <p className="countdown-label">{label}</p>
           <p className="countdown-time">{format(remaining)}</p>
         </>
       ) : (
         <button type="button" className="button" onClick={() => window.location.reload()}>
-          A new proverb is ready
+          {readyText}
         </button>
       )}
     </div>
