@@ -1,9 +1,9 @@
 // Game-wide settings. Tune these in one place.
 
-export const GAME_NAME = 'Proverb'
+export const GAME_NAME = 'Proverbial'
 
 // Public address of the game, used in the share text and link previews (no trailing slash).
-export const SITE_URL = 'https://proverb-game-nine.vercel.app'
+export const SITE_URL = 'https://playproverbial.com'
 
 // Used in link previews, the page title and the share image (npm run share-images).
 export const SITE_TAGLINE = 'A proverb from somewhere in the world. What does it mean?'
