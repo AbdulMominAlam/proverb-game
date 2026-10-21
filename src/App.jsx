@@ -3,6 +3,7 @@ import Countdown from './components/Countdown.jsx'
 import Header from './components/Header.jsx'
 import HowToPlay from './components/HowToPlay.jsx'
 import MeaningRound, { MeaningReveal } from './components/MeaningRound.jsx'
+import NoPuzzle from './components/NoPuzzle.jsx'
 import PreLaunch from './components/PreLaunch.jsx'
 import ProverbCard from './components/ProverbCard.jsx'
 import ResultsScreen from './components/ResultsScreen.jsx'
@@ -24,11 +25,12 @@ function initialScreen(game) {
 export default function App() {
   // Checked once on load; the pre-launch countdown offers a reload when the first puzzle is ready.
   const [beforeLaunch] = useState(() => isBeforeLaunch())
-  return beforeLaunch ? <PreLaunch /> : <Game />
+  const [{ puzzleNumber, proverb }] = useState(() => getDailyPuzzle())
+  if (beforeLaunch) return <PreLaunch />
+  return proverb ? <Game puzzleNumber={puzzleNumber} proverb={proverb} /> : <NoPuzzle puzzleNumber={puzzleNumber} />
 }
 
-function Game() {
-  const [{ puzzleNumber, proverb }] = useState(() => getDailyPuzzle())
+function Game({ puzzleNumber, proverb }) {
   const [game, dispatch] = useReducer(gameReducer, puzzleNumber, loadGame)
   // 'meaning' -> 'origin' -> 'results'; the player moves on with a button after each round.
   const [screen, setScreen] = useState(() => initialScreen(game))

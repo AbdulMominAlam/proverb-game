@@ -24,10 +24,19 @@ function devPuzzleOverride() {
   return Number.isInteger(n) && n > 0 ? n : null
 }
 
+// Puzzle N is always proverbs[N - 1], so appending proverbs never changes a past or current day.
+// proverb is null once the list has run out.
 export function getDailyPuzzle(now = new Date()) {
   const puzzleNumber = devPuzzleOverride() ?? Math.max(1, daysSinceLaunch(now) + 1)
-  const index = (puzzleNumber - 1) % proverbs.length
-  return { puzzleNumber, proverb: proverbs[index] }
+  return { puzzleNumber, proverb: proverbs[puzzleNumber - 1] ?? null }
+}
+
+// Dev-only: a nudge to append more proverbs before the list runs out.
+if (import.meta.env.DEV) {
+  const remaining = proverbs.length - getDailyPuzzle().puzzleNumber
+  if (remaining < 7) {
+    console.warn(`Only ${Math.max(0, remaining)} proverbs left after today. Append more to src/data/proverbs.json.`)
+  }
 }
 
 // Dev-only ?day=N also skips the pre-launch screen.

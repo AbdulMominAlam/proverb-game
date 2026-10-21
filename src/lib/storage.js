@@ -68,12 +68,22 @@ export function recordResult(puzzleNumber, won) {
   const next = { ...stats, played: stats.played + 1, lastPlayed: puzzleNumber }
   if (won) {
     next.wins = stats.wins + 1
-    next.currentStreak = stats.lastWon === puzzleNumber - 1 ? stats.currentStreak + 1 : 1
+    next.currentStreak = stats.lastWon >= puzzleNumber - 1 ? stats.currentStreak + 1 : 1
     next.maxStreak = Math.max(stats.maxStreak, next.currentStreak)
     next.lastWon = puzzleNumber
   } else {
     next.currentStreak = 0
   }
+  write(STATS_KEY, next)
+  return next
+}
+
+// A day with no proverb shouldn't break a streak, so a live streak is carried over it by moving
+// lastWon forward. lastWon then means "the streak is alive through this puzzle", not a win.
+export function carryStreakOver(puzzleNumber) {
+  const stats = loadStats()
+  if (stats.lastWon == null || stats.lastWon !== puzzleNumber - 1) return stats
+  const next = { ...stats, lastWon: puzzleNumber }
   write(STATS_KEY, next)
   return next
 }
