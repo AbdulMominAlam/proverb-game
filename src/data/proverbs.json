@@ -831,5 +831,855 @@
     ],
     "difficulty": "medium",
     "verified": true
+  },
+  {
+    "id": "de-wer-anderen-eine-grube",
+    "original": "Wer anderen eine Grube gräbt, fällt selbst hinein.",
+    "language": "German",
+    "acceptedCountries": ["DE", "AT", "CH"],
+    "literal": "Whoever digs a pit for others falls into it himself.",
+    "meanings": [
+      "If you plot to harm others, the harm comes back to you",
+      "People who set traps for others end up caught in them",
+      "Schemes against other people tend to backfire",
+      "Trying to hurt someone else will end up hurting you",
+      "Evil plans rebound on the person who makes them",
+      "What you plan for others can happen to you",
+      "Malice comes back to bite the one who started it"
+    ],
+    "englishEquivalent": "Hoist with his own petard.",
+    "englishEquivalents": [
+      "Hoist with his own petard",
+      "What goes around comes around",
+      "He that mischief hatches, mischief catches"
+    ],
+    "hints": [
+      "Think about what a hole in the ground is usually for.",
+      "It's about someone secretly plotting against another person.",
+      "It's about a scheme to harm someone backfiring on the schemer."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "ko-gorae-ssaume",
+    "original": "고래 싸움에 새우 등 터진다",
+    "language": "Korean",
+    "acceptedCountries": ["KR", "KP"],
+    "literal": "In a fight between whales, the shrimp's back bursts.",
+    "meanings": [
+      "When powerful people fight, the weak and innocent get hurt",
+      "Bystanders suffer most in conflicts between the strong",
+      "Small people get crushed when big powers clash",
+      "Innocent people pay the price for the quarrels of the mighty",
+      "The little guy gets caught in the crossfire",
+      "When giants fight, those beneath them suffer",
+      "Ordinary people suffer when powerful sides go to war"
+    ],
+    "englishEquivalent": "When elephants fight, it is the grass that suffers.",
+    "englishEquivalents": [
+      "When elephants fight, it is the grass that suffers",
+      "Caught in the crossfire"
+    ],
+    "hints": [
+      "Compare the size of the two kinds of sea creature.",
+      "The shrimp isn't one of the fighters.",
+      "It's about innocent bystanders being hurt when powerful parties clash."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "yo-ile-oba-to-jo",
+    "original": "Ilé ọba tó jó, ẹwà ló bù kún un.",
+    "language": "Yoruba",
+    "acceptedCountries": ["NG", "BJ"],
+    "literal": "The king's house that burned, it is beauty that was added to it.",
+    "meanings": [
+      "A disaster can lead to something better",
+      "Misfortune can be an opportunity to rebuild more beautifully",
+      "Something good can come out of a loss",
+      "A setback can turn into an improvement",
+      "Out of destruction comes renewal",
+      "Bad events can open the way to better things",
+      "What looks like a tragedy may be a blessing"
+    ],
+    "englishEquivalent": "Every cloud has a silver lining.",
+    "englishEquivalents": [
+      "Every cloud has a silver lining",
+      "A blessing in disguise"
+    ],
+    "hints": [
+      "Think about what happens to a royal palace after a fire.",
+      "A king can afford to rebuild, and rebuild grander.",
+      "It's about a misfortune turning out to bring improvement."
+    ],
+    "difficulty": "hard",
+    "verified": false
+  },
+  {
+    "id": "ro-ce-tie-nu-ti-place",
+    "original": "Ce ție nu-ți place, altuia nu-i face.",
+    "language": "Romanian",
+    "acceptedCountries": ["RO", "MD"],
+    "literal": "What you do not like, do not do to another.",
+    "meanings": [
+      "Treat others the way you want to be treated",
+      "Don't do to others what you wouldn't want done to you",
+      "If you dislike something, don't inflict it on someone else",
+      "Show others the respect you expect yourself",
+      "Imagine yourself in the other person's place before acting",
+      "Be fair to others as you'd want them to be fair to you",
+      "Don't harm others in ways you'd hate to be harmed"
+    ],
+    "englishEquivalent": "Do unto others as you would have them do unto you.",
+    "englishEquivalents": [
+      "Do unto others as you would have them do unto you",
+      "Treat others as you would like to be treated",
+      "The golden rule"
+    ],
+    "hints": [
+      "It's a rule of behaviour, not a warning.",
+      "It asks you to think about your own feelings first.",
+      "It's about treating other people the way you'd want to be treated."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "hi-naach-na-jaane",
+    "original": "नाच न जाने आँगन टेढ़ा",
+    "language": "Hindi",
+    "acceptedCountries": ["IN"],
+    "literal": "Doesn't know how to dance, [says] the courtyard is crooked.",
+    "meanings": [
+      "People blame their surroundings for their own lack of skill",
+      "An incompetent person makes excuses instead of admitting fault",
+      "Blaming circumstances to hide your own shortcomings",
+      "Those who can't do something find something else to blame",
+      "Making excuses for your own failures",
+      "Don't blame the conditions when the problem is you",
+      "Unskilled people blame their tools or setting"
+    ],
+    "englishEquivalent": "A bad workman blames his tools.",
+    "englishEquivalents": [
+      "A bad workman blames his tools",
+      "A bad workman always blames his tools"
+    ],
+    "hints": [
+      "The courtyard is probably perfectly fine.",
+      "The dancer is looking for an excuse.",
+      "It's about blaming your surroundings for your own lack of skill."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "nl-wie-zijn-billen-brandt",
+    "original": "Wie zijn billen brandt, moet op de blaren zitten.",
+    "language": "Dutch",
+    "acceptedCountries": ["NL", "BE"],
+    "literal": "Whoever burns his buttocks must sit on the blisters.",
+    "meanings": [
+      "You have to live with the consequences of your own actions",
+      "If you cause your own problems, you must deal with them",
+      "Accept the results of your choices",
+      "Don't complain about trouble you brought on yourself",
+      "You pay for your own mistakes",
+      "Take responsibility for what you've done",
+      "Those who misbehave must bear the outcome"
+    ],
+    "englishEquivalent": "You've made your bed, now lie in it.",
+    "englishEquivalents": [
+      "You've made your bed, now lie in it",
+      "As you make your bed, so you must lie in it",
+      "Face the music"
+    ],
+    "hints": [
+      "The blisters didn't appear by accident.",
+      "Nobody else is going to sit there for you.",
+      "It's about living with the consequences of your own actions."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "sv-lagom-ar-bast",
+    "original": "Lagom är bäst.",
+    "language": "Swedish",
+    "acceptedCountries": ["SE"],
+    "literal": "Just the right amount is best.",
+    "meanings": [
+      "Moderation is better than excess",
+      "Not too much and not too little is ideal",
+      "Balance is the key to a good life",
+      "Avoid extremes in everything",
+      "The right amount beats too much",
+      "Enough is better than more",
+      "Keep things balanced and sensible"
+    ],
+    "englishEquivalent": "Everything in moderation.",
+    "englishEquivalents": [
+      "Everything in moderation",
+      "Moderation in all things",
+      "Enough is as good as a feast"
+    ],
+    "hints": [
+      "The key word is hard to translate into English.",
+      "It's about avoiding both too much and too little.",
+      "It's about moderation and balance being best."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "ak-obi-nkyere-abofra-nyame",
+    "original": "Obi nkyerɛ abofra Nyame.",
+    "language": "Akan (Twi)",
+    "acceptedCountries": ["GH"],
+    "literal": "Nobody shows a child God.",
+    "meanings": [
+      "Some things are so obvious they need no explaining",
+      "Certain truths are known without being taught",
+      "Some knowledge is self-evident",
+      "You don't have to point out what everyone can already see",
+      "Even a child understands some things without being told",
+      "Some things go without saying",
+      "Obvious truths need no teacher"
+    ],
+    "englishEquivalent": "It goes without saying.",
+    "englishEquivalents": [
+      "It goes without saying",
+      "Some things are self-evident"
+    ],
+    "hints": [
+      "Think about what a small child already knows without lessons.",
+      "It's about things nobody needs to be taught.",
+      "It's about some truths being so obvious they need no explanation."
+    ],
+    "difficulty": "hard",
+    "verified": false
+  },
+  {
+    "id": "hu-nema-gyereknek",
+    "original": "Néma gyereknek anyja sem érti a szavát.",
+    "language": "Hungarian",
+    "acceptedCountries": ["HU"],
+    "literal": "Even a mute child's own mother does not understand his words.",
+    "meanings": [
+      "If you don't speak up, nobody can help you",
+      "You have to ask for what you need",
+      "People can't read your mind",
+      "Staying silent means your needs go unmet",
+      "Speak up or you'll be ignored",
+      "Even those closest to you need to be told",
+      "If you never ask, you'll never get"
+    ],
+    "englishEquivalent": "The squeaky wheel gets the grease.",
+    "englishEquivalents": [
+      "The squeaky wheel gets the grease",
+      "Don't ask, don't get",
+      "If you don't ask, you don't get"
+    ],
+    "hints": [
+      "Think about who usually understands a child best.",
+      "The child isn't saying anything at all.",
+      "It's about needing to speak up to get what you need."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "ar-as-sabr-miftah-al-faraj",
+    "original": "الصبر مفتاح الفرج",
+    "language": "Arabic",
+    "acceptedCountries": ["SA", "EG", "JO", "LB", "SY", "PS", "IQ", "AE", "KW", "QA", "BH", "OM", "YE", "LY", "TN", "DZ", "MA", "SD"],
+    "literal": "Patience is the key to relief.",
+    "meanings": [
+      "Being patient leads to an end to your troubles",
+      "If you wait calmly, things will get better",
+      "Patience opens the way out of hardship",
+      "Endure difficulties and relief will come",
+      "Good things come to those who wait",
+      "Hard times pass if you are patient",
+      "Patience is rewarded in the end"
+    ],
+    "englishEquivalent": "Patience is a virtue.",
+    "englishEquivalents": [
+      "Patience is a virtue",
+      "Good things come to those who wait",
+      "All things come to those who wait"
+    ],
+    "hints": [
+      "Think about what a key does.",
+      "It's often said to someone going through a hard time.",
+      "It's about patience bringing an end to hardship."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "zu-umuntu-ngumuntu-ngabantu",
+    "original": "Umuntu ngumuntu ngabantu.",
+    "language": "Zulu",
+    "acceptedCountries": ["ZA"],
+    "literal": "A person is a person through people.",
+    "meanings": [
+      "We become who we are through our relationships with others",
+      "Our humanity depends on other people",
+      "No one exists in isolation from their community",
+      "We are defined by how we treat and relate to others",
+      "A person's identity is shaped by the people around them",
+      "I am because we are",
+      "Everyone is connected to and dependent on others"
+    ],
+    "englishEquivalent": "No man is an island.",
+    "englishEquivalents": [
+      "No man is an island",
+      "I am because we are"
+    ],
+    "hints": [
+      "It's closely tied to the idea of ubuntu.",
+      "It's about what makes someone fully human.",
+      "It's about people becoming who they are through others."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "cs-kdo-se-boji",
+    "original": "Kdo se bojí, nesmí do lesa.",
+    "language": "Czech",
+    "acceptedCountries": ["CZ"],
+    "literal": "Whoever is afraid must not go into the forest.",
+    "meanings": [
+      "If you're scared of the risks, don't take on the challenge",
+      "You can't achieve anything if you're afraid to take risks",
+      "Fear holds you back from doing difficult things",
+      "Anything worthwhile involves some danger",
+      "To succeed you have to be brave",
+      "Don't start something risky if you can't handle the danger",
+      "Courage is needed to venture into the unknown"
+    ],
+    "englishEquivalent": "Nothing ventured, nothing gained.",
+    "englishEquivalents": [
+      "Nothing ventured, nothing gained",
+      "If you can't stand the heat, get out of the kitchen",
+      "Fortune favours the bold"
+    ],
+    "hints": [
+      "Forests in old stories are full of dangers.",
+      "It's about whether to attempt something risky.",
+      "It's about needing courage to take on a challenge."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "he-al-tistakel-bakankan",
+    "original": "אל תסתכל בקנקן אלא במה שיש בו",
+    "language": "Hebrew",
+    "acceptedCountries": ["IL"],
+    "literal": "Do not look at the jug, but at what is in it.",
+    "meanings": [
+      "Judge things by their content, not their appearance",
+      "What's inside matters more than how something looks",
+      "Don't judge people by their looks",
+      "Appearances can be deceiving",
+      "The outside doesn't tell you the true value",
+      "Look beyond the surface",
+      "Substance matters more than packaging"
+    ],
+    "englishEquivalent": "Don't judge a book by its cover.",
+    "englishEquivalents": [
+      "Don't judge a book by its cover",
+      "Appearances can be deceptive"
+    ],
+    "hints": [
+      "A plain container can hold something precious.",
+      "It's about where you should focus your attention.",
+      "It's about judging by substance rather than appearance."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "ta-katrathu-kaiman-alavu",
+    "original": "கற்றது கைமண் அளவு, கல்லாதது உலகளவு",
+    "language": "Tamil",
+    "acceptedCountries": ["IN", "LK"],
+    "literal": "What has been learned is the size of a handful of sand; what has not been learned is the size of the world.",
+    "meanings": [
+      "However much you learn, there is far more you don't know",
+      "Knowledge is tiny compared with what remains to be learned",
+      "Stay humble about how much you know",
+      "There is always more to learn",
+      "No one knows everything, even the wisest",
+      "Learning never ends",
+      "Even experts know only a small part of everything"
+    ],
+    "englishEquivalent": "The more you learn, the more you realise how little you know.",
+    "englishEquivalents": [
+      "The more you learn, the more you realise how little you know",
+      "There is always more to learn"
+    ],
+    "hints": [
+      "Compare the two amounts being described.",
+      "It's about education and knowledge.",
+      "It's about how little you know compared with all there is to learn."
+    ],
+    "difficulty": "hard",
+    "verified": false
+  },
+  {
+    "id": "uk-krashche-synytsia",
+    "original": "Краще синиця в жмені, ніж журавель у небі.",
+    "language": "Ukrainian",
+    "acceptedCountries": ["UA"],
+    "literal": "Better a titmouse in the fist than a crane in the sky.",
+    "meanings": [
+      "Something small you have is better than something big you might get",
+      "Don't give up what you have for an uncertain bigger prize",
+      "A sure thing beats a mere possibility",
+      "Be content with what you can actually hold on to",
+      "Certainty is worth more than promise",
+      "Don't risk what you have chasing something out of reach",
+      "Settle for the modest sure gain"
+    ],
+    "englishEquivalent": "A bird in the hand is worth two in the bush.",
+    "englishEquivalents": [
+      "A bird in the hand is worth two in the bush"
+    ],
+    "hints": [
+      "Compare the size of the two birds.",
+      "One bird is already caught; the other is flying free.",
+      "It's about a small sure thing being better than a big uncertain one."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "ne-ek-haatle-taali",
+    "original": "एक हातले ताली बज्दैन।",
+    "language": "Nepali",
+    "acceptedCountries": ["NP"],
+    "literal": "A clap does not sound with one hand.",
+    "meanings": [
+      "Both sides are responsible for a quarrel",
+      "A conflict always involves more than one person",
+      "It takes two people to create a problem between them",
+      "Don't blame only one side in an argument",
+      "Fights need two participants",
+      "Both parties share the blame",
+      "No dispute is entirely one person's fault"
+    ],
+    "englishEquivalent": "It takes two to tango.",
+    "englishEquivalents": [
+      "It takes two to tango",
+      "It takes two to make a quarrel"
+    ],
+    "hints": [
+      "Try clapping with just one hand.",
+      "It's usually said when someone blames only the other side.",
+      "It's about both parties sharing responsibility for a conflict."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "ht-deye-mon-gen-mon",
+    "original": "Dèyè mòn gen mòn.",
+    "language": "Haitian Creole",
+    "acceptedCountries": ["HT"],
+    "literal": "Behind mountains there are mountains.",
+    "meanings": [
+      "Once you overcome one problem, another appears",
+      "Life's challenges never end",
+      "There is always another obstacle ahead",
+      "Solving one difficulty just reveals the next",
+      "Hardships keep coming one after another",
+      "The struggle continues beyond each victory",
+      "Don't expect the road to get easy"
+    ],
+    "englishEquivalent": "There's always another mountain to climb.",
+    "englishEquivalents": [
+      "There's always another mountain to climb",
+      "No rest for the weary"
+    ],
+    "hints": [
+      "Picture the view after you reach a summit.",
+      "It's about what happens after you overcome something hard.",
+      "It's about one challenge always being followed by another."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "da-forst-til-molle",
+    "original": "Den, der kommer først til mølle, får først malet.",
+    "language": "Danish",
+    "acceptedCountries": ["DK"],
+    "literal": "The one who comes first to the mill gets to grind first.",
+    "meanings": [
+      "Whoever arrives first is served first",
+      "Being early gives you an advantage",
+      "Get there before others to get your turn",
+      "Those who act quickly get priority",
+      "Turns are given in order of arrival",
+      "Arriving first means you go first",
+      "Latecomers have to wait their turn"
+    ],
+    "englishEquivalent": "First come, first served.",
+    "englishEquivalents": [
+      "First come, first served",
+      "The early bird catches the worm"
+    ],
+    "hints": [
+      "Picture farmers queuing with sacks of grain.",
+      "It's about the order in which people are dealt with.",
+      "It's about whoever arrives first being served first."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "ig-egbe-bere-ugo-bere",
+    "original": "Egbe bere, ugo bere; nke sị ibe ya ebela, nku kwaa ya.",
+    "language": "Igbo",
+    "acceptedCountries": ["NG"],
+    "literal": "Let the kite perch, let the eagle perch; whichever says the other shall not perch, may its wing break.",
+    "meanings": [
+      "Everyone should be allowed to live and thrive",
+      "Let others have their place, and keep yours",
+      "Tolerance and coexistence benefit everyone",
+      "Don't try to stop others from succeeding",
+      "There is room for everybody",
+      "Those who deny others a chance deserve misfortune",
+      "Accept others and they will accept you"
+    ],
+    "englishEquivalent": "Live and let live.",
+    "englishEquivalents": [
+      "Live and let live",
+      "There's room for everyone"
+    ],
+    "hints": [
+      "Both birds want somewhere to rest.",
+      "The curse falls on the one who refuses to share.",
+      "It's about tolerance and letting everyone have their place."
+    ],
+    "difficulty": "hard",
+    "verified": false
+  },
+  {
+    "id": "de-wer-a-sagt",
+    "original": "Wer A sagt, muss auch B sagen.",
+    "language": "German",
+    "acceptedCountries": ["DE", "AT", "CH"],
+    "literal": "Whoever says A must also say B.",
+    "meanings": [
+      "Once you start something, you have to finish it",
+      "If you commit to the first step, you must follow through",
+      "Starting something brings obligations to continue",
+      "You can't stop halfway after beginning",
+      "Accept everything that follows from your first decision",
+      "One commitment leads to the next",
+      "Follow through on what you've begun"
+    ],
+    "englishEquivalent": "In for a penny, in for a pound.",
+    "englishEquivalents": [
+      "In for a penny, in for a pound",
+      "Finish what you start",
+      "In for a dime, in for a dollar"
+    ],
+    "hints": [
+      "Think about what usually comes right after the first letter.",
+      "It's about something that has already been started.",
+      "It's about having to follow through once you've begun."
+    ],
+    "difficulty": "easy",
+    "verified": false
+  },
+  {
+    "id": "fi-oma-maa-mansikka",
+    "original": "Oma maa mansikka, muu maa mustikka.",
+    "language": "Finnish",
+    "acceptedCountries": ["FI"],
+    "literal": "Own land a strawberry, other land a blueberry.",
+    "meanings": [
+      "Your homeland is sweeter than anywhere else",
+      "Home is the best place to be",
+      "Nowhere compares to your own country",
+      "Foreign places are fine, but home is better",
+      "People prefer their own home",
+      "There's no place like home",
+      "Travel is nice but home is best"
+    ],
+    "englishEquivalent": "There's no place like home.",
+    "englishEquivalents": [
+      "There's no place like home",
+      "East or west, home is best",
+      "Home sweet home"
+    ],
+    "hints": [
+      "Both are berries, but one is considered a greater treat.",
+      "It compares where you're from with everywhere else.",
+      "It's about home being better than anywhere else."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "bn-oti-lobhe-tanti-noshto",
+    "original": "অতি লোভে তাঁতি নষ্ট",
+    "language": "Bengali",
+    "acceptedCountries": ["BD", "IN"],
+    "literal": "Through too much greed, the weaver is ruined.",
+    "meanings": [
+      "Excessive greed leads to ruin",
+      "Wanting too much can make you lose everything",
+      "Being too greedy destroys you",
+      "Be content or you may lose what you have",
+      "Greed is self-destructive",
+      "Overreaching leads to downfall",
+      "Trying to get too much backfires"
+    ],
+    "englishEquivalent": "Grasp all, lose all.",
+    "englishEquivalents": [
+      "Grasp all, lose all",
+      "Don't kill the goose that lays the golden eggs"
+    ],
+    "hints": [
+      "The weaver had a decent living before.",
+      "His downfall came from wanting more and more.",
+      "It's about greed leading to ruin."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "af-n-boer-maak-n-plan",
+    "original": "'n Boer maak 'n plan.",
+    "language": "Afrikaans",
+    "acceptedCountries": ["ZA", "NA"],
+    "literal": "A farmer makes a plan.",
+    "meanings": [
+      "With resourcefulness you can solve any problem",
+      "Practical people always find a way",
+      "Improvise when things go wrong",
+      "Don't give up; figure something out",
+      "There is always a way to get something done",
+      "Necessity makes people inventive",
+      "Make do with what you have and find a solution"
+    ],
+    "englishEquivalent": "Where there's a will, there's a way.",
+    "englishEquivalents": [
+      "Where there's a will, there's a way",
+      "Necessity is the mother of invention"
+    ],
+    "hints": [
+      "Think of someone far from shops who has to fix things alone.",
+      "It's said when something goes wrong and there's no easy fix.",
+      "It's about resourcefulness and always finding a way."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "sw-asiyesikia-la-mkuu",
+    "original": "Asiyesikia la mkuu huvunjika guu.",
+    "language": "Swahili",
+    "acceptedCountries": ["TZ", "KE"],
+    "literal": "One who does not heed the elder's word breaks a leg.",
+    "meanings": [
+      "Ignoring the advice of elders leads to trouble",
+      "Listen to people with more experience",
+      "Those who won't take advice get hurt",
+      "Disobeying wise counsel has painful consequences",
+      "Respect and follow the guidance of your elders",
+      "Stubbornness against good advice ends badly",
+      "If you don't listen, you'll learn the hard way"
+    ],
+    "englishEquivalent": "Listen to your elders.",
+    "englishEquivalents": [
+      "Listen to your elders",
+      "He that will not be counselled cannot be helped"
+    ],
+    "hints": [
+      "The broken leg is a consequence, not an accident.",
+      "It's about someone who was warned beforehand.",
+      "It's about ignoring the advice of elders leading to trouble."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "hi-ghar-ki-murgi",
+    "original": "घर की मुर्गी दाल बराबर",
+    "language": "Hindi",
+    "acceptedCountries": ["IN"],
+    "literal": "The chicken at home is equal to lentils.",
+    "meanings": [
+      "People undervalue what they already have",
+      "Things close at hand are taken for granted",
+      "Familiar people and things are not appreciated",
+      "We don't value what is always available to us",
+      "Something precious seems ordinary when it's yours",
+      "People appreciate outsiders more than their own",
+      "What's at home is never valued enough"
+    ],
+    "englishEquivalent": "Familiarity breeds contempt.",
+    "englishEquivalents": [
+      "Familiarity breeds contempt",
+      "A prophet has no honour in his own country"
+    ],
+    "hints": [
+      "Chicken is usually considered a treat, lentils an everyday food.",
+      "It's about how something is valued, not how it tastes.",
+      "It's about taking for granted what you already have."
+    ],
+    "difficulty": "hard",
+    "verified": false
+  },
+  {
+    "id": "nl-hoge-bomen-vangen-veel-wind",
+    "original": "Hoge bomen vangen veel wind.",
+    "language": "Dutch",
+    "acceptedCountries": ["NL", "BE"],
+    "literal": "Tall trees catch a lot of wind.",
+    "meanings": [
+      "Prominent people attract the most criticism",
+      "The more successful you are, the more you are attacked",
+      "Being in a high position exposes you to pressure",
+      "People who stand out get the most opposition",
+      "Fame and power bring envy and criticism",
+      "Leaders bear the brunt of blame",
+      "The higher you rise, the more you are targeted"
+    ],
+    "englishEquivalent": "The bigger they are, the harder they fall.",
+    "englishEquivalents": [
+      "The bigger they are, the harder they fall",
+      "Uneasy lies the head that wears a crown",
+      "The tall poppy gets cut down"
+    ],
+    "hints": [
+      "Think about which trees in a forest feel the storm most.",
+      "The trees stand for people who rise above others.",
+      "It's about prominent people attracting the most criticism."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "cy-cenedl-heb-iaith",
+    "original": "Cenedl heb iaith, cenedl heb galon.",
+    "language": "Welsh",
+    "acceptedCountries": ["GB"],
+    "literal": "A nation without a language is a nation without a heart.",
+    "meanings": [
+      "A people's language is the core of its identity",
+      "Losing your language means losing your soul as a nation",
+      "Language keeps a culture alive",
+      "Protect your native tongue",
+      "A culture without its language is empty",
+      "Language and identity are inseparable",
+      "Without its own language, a nation loses what makes it unique"
+    ],
+    "englishEquivalent": "Language is the soul of a nation.",
+    "englishEquivalents": [
+      "Language is the soul of a nation",
+      "Lose your language, lose your identity"
+    ],
+    "hints": [
+      "It's often quoted by people campaigning for a minority language.",
+      "The heart stands for what keeps a people alive.",
+      "It's about a language being the core of a nation's identity."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "ar-al-qird-fi-ayn-ummih",
+    "original": "القرد في عين أمه غزال",
+    "language": "Arabic",
+    "acceptedCountries": ["SA", "EG", "JO", "LB", "SY", "PS", "IQ", "AE", "KW", "QA", "BH", "OM", "YE", "LY", "TN", "DZ", "MA", "SD"],
+    "literal": "The monkey, in its mother's eye, is a gazelle.",
+    "meanings": [
+      "Every mother thinks her child is beautiful",
+      "Love makes us blind to flaws",
+      "Parents see only the best in their children",
+      "Beauty depends on who is looking",
+      "People we love look perfect to us",
+      "A mother's love sees no faults",
+      "Affection changes how we see someone"
+    ],
+    "englishEquivalent": "Beauty is in the eye of the beholder.",
+    "englishEquivalents": [
+      "Beauty is in the eye of the beholder",
+      "Love is blind",
+      "Every mother thinks her child is beautiful"
+    ],
+    "hints": [
+      "Gazelles are a classic symbol of beauty.",
+      "It's about how one particular person sees the monkey.",
+      "It's about love making parents see their children as beautiful."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "no-liten-tue-kan-velte",
+    "original": "Liten tue kan velte stort lass.",
+    "language": "Norwegian",
+    "acceptedCountries": ["NO"],
+    "literal": "A small tussock can overturn a big load.",
+    "meanings": [
+      "Small things can cause big problems",
+      "Don't underestimate minor details",
+      "A tiny obstacle can bring down something large",
+      "Little causes can have huge effects",
+      "Something insignificant can ruin a big undertaking",
+      "Even small matters deserve attention",
+      "Minor issues can lead to major failures"
+    ],
+    "englishEquivalent": "For want of a nail the kingdom was lost.",
+    "englishEquivalents": [
+      "For want of a nail the kingdom was lost",
+      "Small things can make a big difference"
+    ],
+    "hints": [
+      "A tussock is a little clump of grass in a field.",
+      "Picture a heavily loaded hay cart going over it.",
+      "It's about small things having big consequences."
+    ],
+    "difficulty": "medium",
+    "verified": false
+  },
+  {
+    "id": "hu-addig-nyujtozkodj",
+    "original": "Addig nyújtózkodj, ameddig a takaród ér.",
+    "language": "Hungarian",
+    "acceptedCountries": ["HU"],
+    "literal": "Stretch out only as far as your blanket reaches.",
+    "meanings": [
+      "Live within your means",
+      "Don't spend more than you have",
+      "Adjust your plans to your resources",
+      "Only take on what you can afford",
+      "Don't overreach beyond your budget",
+      "Make your wants fit what you have",
+      "Spend according to what you earn"
+    ],
+    "englishEquivalent": "Cut your coat according to your cloth.",
+    "englishEquivalents": [
+      "Cut your coat according to your cloth",
+      "Live within your means"
+    ],
+    "hints": [
+      "Think about what happens to your feet if you stretch too far under a short blanket.",
+      "The blanket stands for something you have a limited amount of.",
+      "It's about living within your means."
+    ],
+    "difficulty": "medium",
+    "verified": false
   }
 ]
