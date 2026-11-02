@@ -975,31 +975,32 @@
     "verified": false
   },
   {
-    "id": "nl-geen-rook-zonder-vuur",
-    "original": "Geen rook zonder vuur.",
+    "id": "nl-wie-zijn-billen-brandt",
+    "original": "Wie zijn billen brandt, moet op de blaren zitten.",
     "language": "Dutch",
     "acceptedCountries": ["NL", "BE"],
-    "literal": "No smoke without fire.",
+    "literal": "Whoever burns his buttocks must sit on the blisters.",
     "meanings": [
-      "Rumours usually have some truth behind them",
-      "If people are talking about something, there's probably a reason",
-      "Signs of trouble usually mean there is real trouble",
-      "Suspicion rarely arises out of nothing",
-      "Where there are clues, there is usually a cause",
-      "Gossip often has a basis in fact",
-      "Every rumour starts from something real"
+      "You have to live with the consequences of your own actions",
+      "If you cause your own problems, you must deal with them",
+      "Accept the results of your choices",
+      "Don't complain about trouble you brought on yourself",
+      "You pay for your own mistakes",
+      "Take responsibility for what you've done",
+      "Those who misbehave must bear the outcome"
     ],
-    "englishEquivalent": "There's no smoke without fire.",
+    "englishEquivalent": "You've made your bed, now lie in it.",
     "englishEquivalents": [
-      "There's no smoke without fire",
-      "Where there's smoke, there's fire"
+      "You've made your bed, now lie in it",
+      "As you make your bed, so you must lie in it",
+      "Face the music"
     ],
     "hints": [
-      "Smoke is a visible sign of something you might not see yet.",
-      "It's often said when people are gossiping about someone.",
-      "It's about rumours or suspicions usually having some truth behind them."
+      "The blisters didn't appear by accident.",
+      "Nobody else is going to sit there for you.",
+      "It's about living with the consequences of your own actions."
     ],
-    "difficulty": "easy",
+    "difficulty": "medium",
     "verified": false
   },
   {
@@ -1060,31 +1061,32 @@
     "verified": false
   },
   {
-    "id": "hu-ajandek-lonak",
-    "original": "Ajándék lónak ne nézd a fogát.",
+    "id": "hu-nema-gyereknek",
+    "original": "Néma gyereknek anyja sem érti a szavát.",
     "language": "Hungarian",
     "acceptedCountries": ["HU"],
-    "literal": "Don't look at the teeth of a gift horse.",
+    "literal": "Even a mute child's own mother does not understand his words.",
     "meanings": [
-      "Don't criticise a gift you've been given",
-      "Be grateful for gifts instead of finding fault",
-      "Accept presents graciously without inspecting them",
-      "Don't question the value of something you got for free",
-      "Be thankful rather than picky about gifts",
-      "Don't complain about something you received for nothing",
-      "It's rude to judge the quality of a present"
+      "If you don't speak up, nobody can help you",
+      "You have to ask for what you need",
+      "People can't read your mind",
+      "Staying silent means your needs go unmet",
+      "Speak up or you'll be ignored",
+      "Even those closest to you need to be told",
+      "If you never ask, you'll never get"
     ],
-    "englishEquivalent": "Don't look a gift horse in the mouth.",
+    "englishEquivalent": "The squeaky wheel gets the grease.",
     "englishEquivalents": [
-      "Don't look a gift horse in the mouth",
-      "Beggars can't be choosers"
+      "The squeaky wheel gets the grease",
+      "Don't ask, don't get",
+      "If you don't ask, you don't get"
     ],
     "hints": [
-      "A horse's teeth reveal its age.",
-      "The horse didn't cost anything.",
-      "It's about accepting gifts gratefully instead of finding fault."
+      "Think about who usually understands a child best.",
+      "The child isn't saying anything at all.",
+      "It's about needing to speak up to get what you need."
     ],
-    "difficulty": "easy",
+    "difficulty": "medium",
     "verified": false
   },
   {
@@ -1313,29 +1315,29 @@
     "verified": false
   },
   {
-    "id": "da-kaste-med-sten",
-    "original": "Man skal ikke kaste med sten, når man selv bor i et glashus.",
+    "id": "da-forst-til-molle",
+    "original": "Den, der kommer først til mølle, får først malet.",
     "language": "Danish",
     "acceptedCountries": ["DK"],
-    "literal": "One should not throw stones when one lives in a glass house oneself.",
+    "literal": "The one who comes first to the mill gets to grind first.",
     "meanings": [
-      "Don't criticise others for faults you have too",
-      "People with weaknesses shouldn't attack others",
-      "Don't judge others when you're open to the same criticism",
-      "Hypocrites shouldn't point fingers",
-      "Look at your own flaws before criticising others",
-      "If you're vulnerable, don't provoke others",
-      "Don't accuse others of what you're guilty of"
+      "Whoever arrives first is served first",
+      "Being early gives you an advantage",
+      "Get there before others to get your turn",
+      "Those who act quickly get priority",
+      "Turns are given in order of arrival",
+      "Arriving first means you go first",
+      "Latecomers have to wait their turn"
     ],
-    "englishEquivalent": "People who live in glass houses shouldn't throw stones.",
+    "englishEquivalent": "First come, first served.",
     "englishEquivalents": [
-      "People who live in glass houses shouldn't throw stones",
-      "The pot calling the kettle black"
+      "First come, first served",
+      "The early bird catches the worm"
     ],
     "hints": [
-      "Think about what your own home is made of.",
-      "Someone could easily throw stones back.",
-      "It's about not criticising others for faults you share."
+      "Picture farmers queuing with sacks of grain.",
+      "It's about the order in which people are dealt with.",
+      "It's about whoever arrives first being served first."
     ],
     "difficulty": "easy",
     "verified": false
@@ -1369,30 +1371,30 @@
     "verified": false
   },
   {
-    "id": "de-der-apfel-faellt",
-    "original": "Der Apfel fällt nicht weit vom Stamm.",
+    "id": "de-wer-a-sagt",
+    "original": "Wer A sagt, muss auch B sagen.",
     "language": "German",
     "acceptedCountries": ["DE", "AT", "CH"],
-    "literal": "The apple doesn't fall far from the trunk.",
+    "literal": "Whoever says A must also say B.",
     "meanings": [
-      "Children are similar to their parents",
-      "Kids inherit their parents' traits and habits",
-      "You can see the parents in their children",
-      "Family characteristics are passed down",
-      "Children tend to turn out like their mother or father",
-      "Like parent, like child",
-      "People resemble the family they come from"
+      "Once you start something, you have to finish it",
+      "If you commit to the first step, you must follow through",
+      "Starting something brings obligations to continue",
+      "You can't stop halfway after beginning",
+      "Accept everything that follows from your first decision",
+      "One commitment leads to the next",
+      "Follow through on what you've begun"
     ],
-    "englishEquivalent": "The apple doesn't fall far from the tree.",
+    "englishEquivalent": "In for a penny, in for a pound.",
     "englishEquivalents": [
-      "The apple doesn't fall far from the tree",
-      "Like father, like son",
-      "A chip off the old block"
+      "In for a penny, in for a pound",
+      "Finish what you start",
+      "In for a dime, in for a dollar"
     ],
     "hints": [
-      "Think about where fruit lands when it drops.",
-      "The tree stands for a family.",
-      "It's about children being like their parents."
+      "Think about what usually comes right after the first letter.",
+      "It's about something that has already been started.",
+      "It's about having to follow through once you've begun."
     ],
     "difficulty": "easy",
     "verified": false
@@ -1539,30 +1541,32 @@
     "verified": false
   },
   {
-    "id": "nl-als-de-kat-van-huis-is",
-    "original": "Als de kat van huis is, dansen de muizen op tafel.",
+    "id": "nl-hoge-bomen-vangen-veel-wind",
+    "original": "Hoge bomen vangen veel wind.",
     "language": "Dutch",
     "acceptedCountries": ["NL", "BE"],
-    "literal": "When the cat is away from home, the mice dance on the table.",
+    "literal": "Tall trees catch a lot of wind.",
     "meanings": [
-      "People misbehave when nobody in authority is watching",
-      "When the boss is away, the workers slack off",
-      "Without supervision, rules get broken",
-      "People take liberties when the person in charge is absent",
-      "Discipline slips when the authority leaves",
-      "Kids run wild when the parents are out",
-      "Nobody follows the rules when no one is enforcing them"
+      "Prominent people attract the most criticism",
+      "The more successful you are, the more you are attacked",
+      "Being in a high position exposes you to pressure",
+      "People who stand out get the most opposition",
+      "Fame and power bring envy and criticism",
+      "Leaders bear the brunt of blame",
+      "The higher you rise, the more you are targeted"
     ],
-    "englishEquivalent": "When the cat's away, the mice will play.",
+    "englishEquivalent": "The bigger they are, the harder they fall.",
     "englishEquivalents": [
-      "When the cat's away, the mice will play"
+      "The bigger they are, the harder they fall",
+      "Uneasy lies the head that wears a crown",
+      "The tall poppy gets cut down"
     ],
     "hints": [
-      "Think about who keeps the mice in check.",
-      "The cat stands for someone in charge.",
-      "It's about people misbehaving when authority is absent."
+      "Think about which trees in a forest feel the storm most.",
+      "The trees stand for people who rise above others.",
+      "It's about prominent people attracting the most criticism."
     ],
-    "difficulty": "easy",
+    "difficulty": "medium",
     "verified": false
   },
   {
@@ -1623,31 +1627,32 @@
     "verified": false
   },
   {
-    "id": "no-ikke-darlig-vaer",
-    "original": "Det finnes ikke dårlig vær, bare dårlige klær.",
+    "id": "no-liten-tue-kan-velte",
+    "original": "Liten tue kan velte stort lass.",
     "language": "Norwegian",
-    "acceptedCountries": ["NO", "SE"],
-    "literal": "There is no bad weather, only bad clothes.",
+    "acceptedCountries": ["NO"],
+    "literal": "A small tussock can overturn a big load.",
     "meanings": [
-      "Bad conditions are no excuse if you're properly prepared",
-      "Be prepared instead of complaining",
-      "The problem is usually your preparation, not the circumstances",
-      "Dress right and you can go out in any weather",
-      "Don't let the weather stop you",
-      "Excuses come from being unprepared",
-      "Adapt to conditions instead of avoiding them"
+      "Small things can cause big problems",
+      "Don't underestimate minor details",
+      "A tiny obstacle can bring down something large",
+      "Little causes can have huge effects",
+      "Something insignificant can ruin a big undertaking",
+      "Even small matters deserve attention",
+      "Minor issues can lead to major failures"
     ],
-    "englishEquivalent": "There's no such thing as bad weather, only the wrong clothes.",
+    "englishEquivalent": "Little strokes fell great oaks.",
     "englishEquivalents": [
-      "There's no such thing as bad weather, only the wrong clothes",
-      "Be prepared"
+      "Little strokes fell great oaks",
+      "For want of a nail the kingdom was lost",
+      "Small things can make a big difference"
     ],
     "hints": [
-      "It's often said to children who don't want to go outside.",
-      "The weather isn't really the problem.",
-      "It's about being prepared instead of blaming conditions."
+      "A tussock is a little clump of grass in a field.",
+      "Picture a heavily loaded hay cart going over it.",
+      "It's about small things having big consequences."
     ],
-    "difficulty": "easy",
+    "difficulty": "medium",
     "verified": false
   },
   {
