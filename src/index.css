@@ -773,13 +773,20 @@ input {
   resize: none;
 }
 
-.support-note {
-  margin: 12px 0 0;
-  text-align: center;
+/* Secondary call to action under Share: outlined and muted, brightening on hover. */
+.support-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-decoration: none;
 }
 
-/* Quiet links: same colour as the muted text around them, just underlined. */
-.support-note a,
+.support-button:hover {
+  color: var(--text);
+}
+
+/* Quiet footer link: same colour as the muted text around it, just underlined. */
 .site-about a {
   color: inherit;
   text-underline-offset: 2px;
