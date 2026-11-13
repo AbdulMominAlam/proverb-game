@@ -773,6 +773,18 @@ input {
   resize: none;
 }
 
+.support-note {
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+/* Quiet links: same colour as the muted text around them, just underlined. */
+.support-note a,
+.site-about a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
+
 .results-note {
   margin: -8px 0 16px;
   text-align: center;

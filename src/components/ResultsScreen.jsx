@@ -1,4 +1,4 @@
-import { MAX_MEANING_ATTEMPTS, MAX_ORIGIN_ATTEMPTS } from '../config.js'
+import { GAME_NAME, MAX_MEANING_ATTEMPTS, MAX_ORIGIN_ATTEMPTS, SUPPORT_URL } from '../config.js'
 import { formatCountryList } from '../lib/geo.js'
 import { RATING_LABELS, ratingFor } from '../lib/scoring.js'
 import { buildShareText } from '../lib/share.js'
@@ -57,6 +57,13 @@ export default function ResultsScreen({ game, proverb, alreadyPlayed, children }
 
       <pre className="share-preview" aria-label="Share preview">{shareText}</pre>
       <ShareButton text={shareText} />
+      <p className="support-note muted small">
+        If you enjoy {GAME_NAME}, you can buy me a{' '}
+        <a href={SUPPORT_URL} target="_blank" rel="noopener">
+          coffee
+        </a>{' '}
+        ☕
+      </p>
       {children}
     </section>
   )

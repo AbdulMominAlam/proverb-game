@@ -5,6 +5,9 @@ export const GAME_NAME = 'Proverbial'
 // Public address of the game, used in the share text and link previews (no trailing slash).
 export const SITE_URL = 'https://playproverbial.com'
 
+// "Buy me a coffee" page, linked from the About footer and the results screen.
+export const SUPPORT_URL = 'https://buymeacoffee.com/proverbial'
+
 // Used in link previews, the page title and the share image (npm run share-images).
 export const SITE_TAGLINE = 'A proverb from somewhere in the world. What does it mean?'
 export const SITE_DESCRIPTION =

@@ -1,6 +1,13 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import { GAME_NAME, MAX_MEANING_ATTEMPTS, MAX_ORIGIN_ATTEMPTS, SITE_DESCRIPTION, SITE_URL } from './src/config.js'
+import {
+  GAME_NAME,
+  MAX_MEANING_ATTEMPTS,
+  MAX_ORIGIN_ATTEMPTS,
+  SITE_DESCRIPTION,
+  SITE_URL,
+  SUPPORT_URL,
+} from './src/config.js'
 
 const escapeHtml = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -16,6 +23,7 @@ function siteMeta() {
     PAGE_TITLE: `${GAME_NAME} – A daily word game with proverbs from around the world`,
     SITE_URL,
     SITE_DESCRIPTION,
+    SUPPORT_URL,
     MAX_MEANING_ATTEMPTS: String(MAX_MEANING_ATTEMPTS),
     MAX_ORIGIN_ATTEMPTS: String(MAX_ORIGIN_ATTEMPTS),
   }
