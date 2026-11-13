@@ -1,10 +1,18 @@
-// Runs the sentence-embedding model off the main thread.
+// Runs the sentence-embedding model off the main thread, fixing obvious typos in each guess first.
 //
 // Messages in:  { type: 'init', model, targets }   { type: 'score', id, text }
 // Messages out: { type: 'progress', progress }  { type: 'ready' }
-//               { type: 'score', id, similarity }  { type: 'error', id?, message }
+//               { type: 'score', id, similarity, scored }  { type: 'error', id?, message }
+//               (`scored` is the text that was actually scored, after typo fixes)
 import { env, pipeline } from '@huggingface/transformers'
+import nspell from 'nspell'
 import { createModelFetch, createSafeCache, probeSize } from './modelDownloads.js'
+import { correctTypos } from './spelling.js'
+// The dictionary packages only export a Node loader, so their files are referenced directly.
+import gbAff from '../../node_modules/dictionary-en-gb/index.aff?url'
+import gbDic from '../../node_modules/dictionary-en-gb/index.dic?url'
+import usAff from '../../node_modules/dictionary-en/index.aff?url'
+import usDic from '../../node_modules/dictionary-en/index.dic?url'
 import asyncifyMjs from 'onnxruntime-web/ort-wasm-simd-threaded.asyncify.mjs?url'
 import asyncifyWasm from 'onnxruntime-web/ort-wasm-simd-threaded.asyncify.wasm?url'
 import plainMjs from 'onnxruntime-web/ort-wasm-simd-threaded.mjs?url'
@@ -57,6 +65,30 @@ env.fetch = createModelFetch({ sizeOf: (url) => sizes.get(url), onProgress: repo
 let extractorPromise = null
 let targetVectors = null
 
+// Typo fixing: US and British Hunspell dictionaries, the model's vocabulary, and the words in
+// today's answers. If the dictionaries fail to load, guesses are scored as typed.
+let spellersPromise = null
+let vocab = new Map()
+let answerWords = new Set()
+
+async function loadSpellers() {
+  const text = async (url) => {
+    const res = await fetch(url)
+    if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`)
+    return res.text()
+  }
+  const load = async (affUrl, dicUrl) => nspell(...(await Promise.all([text(affUrl), text(dicUrl)])))
+  return Promise.all([load(usAff, usDic), load(gbAff, gbDic)]).catch((err) => {
+    console.warn('[meaning checker] Spellcheck unavailable, scoring guesses as typed:', err)
+    return null
+  })
+}
+
+async function fixTypos(text) {
+  const spellers = await spellersPromise
+  return spellers ? correctTypos(text, { spellers, vocab, known: answerWords }) : text
+}
+
 async function embed(extractor, texts) {
   const output = await extractor(texts, { pooling: 'mean', normalize: true })
   return output.tolist()
@@ -84,6 +116,8 @@ async function measureDownloads(model) {
 }
 
 async function init(model, targets) {
+  spellersPromise ??= loadSpellers()
+  answerWords = new Set(targets.join(' ').toLowerCase().replace(/’/g, "'").match(/[a-z]+(?:'[a-z]+)*/g))
   if (!extractorPromise) {
     await measureDownloads(model)
     extractorPromise = pipeline('feature-extraction', model, { dtype: MODEL_DTYPE })
@@ -92,15 +126,18 @@ async function init(model, targets) {
     extractorPromise = null // let a later init try again
     throw env.fetch.lastError ?? err // the real download failure, not the library's wrapper error
   })
+  vocab = extractor.tokenizer.get_vocab()
   targetVectors = await embed(extractor, targets)
+  await spellersPromise
   self.postMessage({ type: 'ready' })
 }
 
 async function score(id, text) {
   const extractor = await extractorPromise
-  const [guess] = await embed(extractor, [text])
+  const scored = await fixTypos(text)
+  const [guess] = await embed(extractor, [scored])
   const similarity = Math.max(...targetVectors.map((t) => dot(guess, t)))
-  self.postMessage({ type: 'score', id, similarity })
+  self.postMessage({ type: 'score', id, similarity, scored })
 }
 
 self.addEventListener('message', ({ data }) => {

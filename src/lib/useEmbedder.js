@@ -3,7 +3,8 @@ import { EMBEDDING_MODEL } from '../config.js'
 
 // Loads the embedding model in a worker and embeds `targets` once; guesses score as the max
 // cosine similarity against any target.
-// Returns { status: 'loading' | 'ready' | 'error', progress (0-100), error, score(text), retry() }.
+// Returns { status: 'loading' | 'ready' | 'error', progress (0-100), error, score(text), retry() },
+// where score(text) resolves to { similarity, scored } and `scored` is the text after typo fixes.
 // Pass `enabled: false` to skip loading entirely (e.g. when the meaning round is already over).
 export function useEmbedder(targets, { enabled = true } = {}) {
   const [state, setState] = useState({ status: 'loading', progress: 0, error: null })
@@ -32,7 +33,7 @@ export function useEmbedder(targets, { enabled = true } = {}) {
       } else if (data.type === 'ready') {
         setState({ status: 'ready', progress: 100, error: null })
       } else if (data.type === 'score') {
-        pending.get(data.id)?.resolve(data.similarity)
+        pending.get(data.id)?.resolve({ similarity: data.similarity, scored: data.scored })
         pending.delete(data.id)
       } else if (data.type === 'error') {
         if (data.id != null && pending.has(data.id)) {

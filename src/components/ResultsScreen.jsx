@@ -57,7 +57,7 @@ export default function ResultsScreen({ game, proverb, alreadyPlayed, children }
 
       <pre className="share-preview" aria-label="Share preview">{shareText}</pre>
       <ShareButton text={shareText} />
-      <a className="button button-wide button-ghost support-button" href={SUPPORT_URL} target="_blank" rel="noopener">
+      <a className="button button-wide support-button" href={SUPPORT_URL} target="_blank" rel="noopener">
         ☕ Buy me a coffee
       </a>
       {children}

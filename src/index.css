@@ -335,6 +335,10 @@ input {
   margin-top: 14px;
 }
 
+.scored-as {
+  margin: 8px 0 0;
+}
+
 .form-message {
   margin: 8px 0 0;
   font-size: 0.9rem;
@@ -773,17 +777,19 @@ input {
   resize: none;
 }
 
-/* Secondary call to action under Share: outlined and muted, brightening on hover. */
+/* Buy Me a Coffee's brand yellow and black, in both themes. Size and shape come from .button. */
 .support-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--muted);
+  border-color: #ffdd00;
+  background: #ffdd00;
+  color: #000000;
   text-decoration: none;
 }
 
 .support-button:hover {
-  color: var(--text);
+  filter: brightness(0.95);
 }
 
 /* Quiet footer link: same colour as the muted text around it, just underlined. */

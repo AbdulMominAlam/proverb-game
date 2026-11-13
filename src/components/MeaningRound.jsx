@@ -15,6 +15,8 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
   const [text, setText] = useState('')
   const [scoring, setScoring] = useState(false)
   const [message, setMessage] = useState(null)
+  // The typo-fixed text the last guess was scored as, when it differs from what was typed.
+  const [scoredAs, setScoredAs] = useState(null)
   const inputRef = useRef(null)
   // Each scored guess adds a card above the input, pushing it down towards the keyboard.
   useKeepAboveKeyboard(inputRef, meaning.guesses.length)
@@ -33,9 +35,11 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
     const submitted = text
     setScoring(true)
     setMessage(null)
+    setScoredAs(null)
     try {
-      const similarity = await embedder.score(guess)
+      const { similarity, scored } = await embedder.score(guess)
       dispatch({ type: 'meaningGuess', text: guess, similarity })
+      setScoredAs(scored !== guess ? scored : null)
       // The field stays editable while scoring; keep anything typed since submitting.
       setText((current) => (current === submitted ? '' : current))
     } catch {
@@ -101,6 +105,7 @@ export default function MeaningRound({ proverb, meaning, embedder, dispatch, onC
               {scoring ? 'Checking…' : 'Guess'}
             </button>
           </form>
+          {scoredAs && <p className="scored-as muted small">Scored as: {scoredAs}</p>}
           {message && <p className="form-message">{message}</p>}
           {/* Below the input, so the input doesn't jump when the notice disappears. */}
           <ModelLoading
