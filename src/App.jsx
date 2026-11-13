@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Suspense, lazy, useEffect, useReducer, useState } from 'react'
 import Countdown from './components/Countdown.jsx'
 import Header from './components/Header.jsx'
@@ -26,8 +28,22 @@ export default function App() {
   // Checked once on load; the pre-launch countdown offers a reload when the first puzzle is ready.
   const [beforeLaunch] = useState(() => isBeforeLaunch())
   const [{ puzzleNumber, proverb }] = useState(() => getDailyPuzzle())
-  if (beforeLaunch) return <PreLaunch />
-  return proverb ? <Game puzzleNumber={puzzleNumber} proverb={proverb} /> : <NoPuzzle puzzleNumber={puzzleNumber} />
+  let page = <NoPuzzle puzzleNumber={puzzleNumber} />
+  if (beforeLaunch) page = <PreLaunch />
+  else if (proverb) page = <Game puzzleNumber={puzzleNumber} proverb={proverb} />
+
+  return (
+    <>
+      {page}
+      {/* Production only, so local dev visits aren't counted. */}
+      {import.meta.env.PROD && (
+        <>
+          <Analytics />
+          <SpeedInsights />
+        </>
+      )}
+    </>
+  )
 }
 
 function Game({ puzzleNumber, proverb }) {
