@@ -859,7 +859,7 @@
       "It's about a scheme to harm someone backfiring on the schemer."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ko-gorae-ssaume",
@@ -887,7 +887,7 @@
       "It's about innocent bystanders being hurt when powerful parties clash."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "yo-ile-oba-to-jo",
@@ -915,43 +915,48 @@
       "It's about a misfortune turning out to bring improvement."
     ],
     "difficulty": "hard",
-    "verified": false
+    "verified": true
   },
   {
-    "id": "ro-ce-tie-nu-ti-place",
-    "original": "Ce ție nu-ți place, altuia nu-i face.",
+    "id": "ro-socoteala-de-acasa",
+    "original": "Socoteala de acasă nu se potrivește cu cea din târg.",
     "language": "Romanian",
-    "acceptedCountries": ["RO", "MD"],
-    "literal": "What you do not like, do not do to another.",
-    "meanings": [
-      "Treat others the way you want to be treated",
-      "Don't do to others what you wouldn't want done to you",
-      "If you dislike something, don't inflict it on someone else",
-      "Show others the respect you expect yourself",
-      "Imagine yourself in the other person's place before acting",
-      "Be fair to others as you'd want them to be fair to you",
-      "Don't harm others in ways you'd hate to be harmed"
+    "acceptedCountries": [
+      "RO",
+      "MD"
     ],
-    "englishEquivalent": "Do unto others as you would have them do unto you.",
+    "literal": "The reckoning made at home doesn't match the one at the market.",
+    "meanings": [
+      "Plans made in advance often don't work out in reality",
+      "Things rarely go the way you expected",
+      "Reality turns out different from what you calculated beforehand",
+      "What you plan at home falls apart once you face the real situation",
+      "Expectations don't survive contact with the real world",
+      "You can't predict everything until you're actually there"
+    ],
+    "englishEquivalent": "The best-laid plans of mice and men often go awry.",
     "englishEquivalents": [
-      "Do unto others as you would have them do unto you",
-      "Treat others as you would like to be treated",
-      "The golden rule"
+      "The best-laid plans of mice and men often go awry",
+      "Things don't always go according to plan",
+      "Man proposes, God disposes"
     ],
     "hints": [
-      "It's a rule of behaviour, not a warning.",
-      "It asks you to think about your own feelings first.",
-      "It's about treating other people the way you'd want to be treated."
+      "Picture someone working out their sums at home before going to market.",
+      "At the market, the prices and deals aren't what they assumed.",
+      "It's about plans made in advance not matching what really happens."
     ],
-    "difficulty": "easy",
+    "difficulty": "medium",
     "verified": false
   },
   {
     "id": "hi-naach-na-jaane",
     "original": "नाच न जाने आँगन टेढ़ा",
     "language": "Hindi",
-    "acceptedCountries": ["IN"],
-    "literal": "Doesn't know how to dance, [says] the courtyard is crooked.",
+    "acceptedCountries": [
+      "IN",
+      "PK"
+    ],
+    "literal": "Can't dance, so blames the crooked courtyard.",
     "meanings": [
       "People blame their surroundings for their own lack of skill",
       "An incompetent person makes excuses instead of admitting fault",
@@ -972,7 +977,7 @@
       "It's about blaming your surroundings for your own lack of skill."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "nl-wie-zijn-billen-brandt",
@@ -1001,33 +1006,35 @@
       "It's about living with the consequences of your own actions."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
-    "id": "sv-lagom-ar-bast",
-    "original": "Lagom är bäst.",
+    "id": "sv-ingen-ko-pa-isen",
+    "original": "Det är ingen ko på isen.",
     "language": "Swedish",
-    "acceptedCountries": ["SE"],
-    "literal": "Just the right amount is best.",
-    "meanings": [
-      "Moderation is better than excess",
-      "Not too much and not too little is ideal",
-      "Balance is the key to a good life",
-      "Avoid extremes in everything",
-      "The right amount beats too much",
-      "Enough is better than more",
-      "Keep things balanced and sensible"
+    "acceptedCountries": [
+      "SE"
     ],
-    "englishEquivalent": "Everything in moderation.",
+    "literal": "There's no cow on the ice.",
+    "meanings": [
+      "There's no need to worry",
+      "There's no rush",
+      "Everything is under control",
+      "It isn't urgent, so relax",
+      "There's no danger, so stay calm",
+      "Nothing bad is happening yet"
+    ],
+    "englishEquivalent": "No need to panic.",
     "englishEquivalents": [
-      "Everything in moderation",
-      "Moderation in all things",
-      "Enough is as good as a feast"
+      "No need to panic",
+      "Where's the fire?",
+      "Don't sweat it",
+      "No worries"
     ],
     "hints": [
-      "The key word is hard to translate into English.",
-      "It's about avoiding both too much and too little.",
-      "It's about moderation and balance being best."
+      "A cow out on the ice would be a real emergency.",
+      "Nobody needs to rush out to rescue anything.",
+      "It's said to tell someone to relax: there's no problem and no hurry."
     ],
     "difficulty": "medium",
     "verified": false
@@ -1058,7 +1065,7 @@
       "It's about some truths being so obvious they need no explanation."
     ],
     "difficulty": "hard",
-    "verified": false
+    "verified": true
   },
   {
     "id": "hu-nema-gyereknek",
@@ -1087,7 +1094,7 @@
       "It's about needing to speak up to get what you need."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ar-as-sabr-miftah-al-faraj",
@@ -1116,7 +1123,7 @@
       "It's about patience bringing an end to hardship."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "zu-umuntu-ngumuntu-ngabantu",
@@ -1144,7 +1151,7 @@
       "It's about people becoming who they are through others."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "cs-kdo-se-boji",
@@ -1173,7 +1180,7 @@
       "It's about needing courage to take on a challenge."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "he-al-tistakel-bakankan",
@@ -1201,7 +1208,7 @@
       "It's about judging by substance rather than appearance."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ta-katrathu-kaiman-alavu",
@@ -1229,13 +1236,17 @@
       "It's about how little you know compared with all there is to learn."
     ],
     "difficulty": "hard",
-    "verified": false
+    "verified": true
   },
   {
     "id": "uk-krashche-synytsia",
     "original": "Краще синиця в жмені, ніж журавель у небі.",
     "language": "Ukrainian",
-    "acceptedCountries": ["UA"],
+    "acceptedCountries": [
+      "UA",
+      "RU",
+      "BY"
+    ],
     "literal": "Better a titmouse in the fist than a crane in the sky.",
     "meanings": [
       "Something small you have is better than something big you might get",
@@ -1256,13 +1267,17 @@
       "It's about a small sure thing being better than a big uncertain one."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ne-ek-haatle-taali",
     "original": "एक हातले ताली बज्दैन।",
     "language": "Nepali",
-    "acceptedCountries": ["NP"],
+    "acceptedCountries": [
+      "NP",
+      "IN",
+      "PK"
+    ],
     "literal": "A clap does not sound with one hand.",
     "meanings": [
       "Both sides are responsible for a quarrel",
@@ -1284,7 +1299,7 @@
       "It's about both parties sharing responsibility for a conflict."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ht-deye-mon-gen-mon",
@@ -1312,13 +1327,20 @@
       "It's about one challenge always being followed by another."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "da-forst-til-molle",
     "original": "Den, der kommer først til mølle, får først malet.",
     "language": "Danish",
-    "acceptedCountries": ["DK"],
+    "acceptedCountries": [
+      "DK",
+      "SE",
+      "NO",
+      "DE",
+      "AT",
+      "CH"
+    ],
     "literal": "The one who comes first to the mill gets to grind first.",
     "meanings": [
       "Whoever arrives first is served first",
@@ -1340,7 +1362,7 @@
       "It's about whoever arrives first being served first."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ig-egbe-bere-ugo-bere",
@@ -1368,13 +1390,21 @@
       "It's about tolerance and letting everyone have their place."
     ],
     "difficulty": "hard",
-    "verified": false
+    "verified": true
   },
   {
     "id": "de-wer-a-sagt",
     "original": "Wer A sagt, muss auch B sagen.",
     "language": "German",
-    "acceptedCountries": ["DE", "AT", "CH"],
+    "acceptedCountries": [
+      "DE",
+      "AT",
+      "CH",
+      "NL",
+      "BE",
+      "PL",
+      "CZ"
+    ],
     "literal": "Whoever says A must also say B.",
     "meanings": [
       "Once you start something, you have to finish it",
@@ -1397,7 +1427,7 @@
       "It's about having to follow through once you've begun."
     ],
     "difficulty": "easy",
-    "verified": false
+    "verified": true
   },
   {
     "id": "fi-oma-maa-mansikka",
@@ -1426,7 +1456,7 @@
       "It's about home being better than anywhere else."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "bn-oti-lobhe-tanti-noshto",
@@ -1454,7 +1484,7 @@
       "It's about greed leading to ruin."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "af-n-boer-maak-n-plan",
@@ -1482,7 +1512,7 @@
       "It's about resourcefulness and always finding a way."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "sw-asiyesikia-la-mkuu",
@@ -1510,13 +1540,16 @@
       "It's about ignoring the advice of elders leading to trouble."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "hi-ghar-ki-murgi",
     "original": "घर की मुर्गी दाल बराबर",
     "language": "Hindi",
-    "acceptedCountries": ["IN"],
+    "acceptedCountries": [
+      "IN",
+      "PK"
+    ],
     "literal": "The chicken at home is equal to lentils.",
     "meanings": [
       "People undervalue what they already have",
@@ -1538,7 +1571,7 @@
       "It's about taking for granted what you already have."
     ],
     "difficulty": "hard",
-    "verified": false
+    "verified": true
   },
   {
     "id": "nl-hoge-bomen-vangen-veel-wind",
@@ -1567,7 +1600,7 @@
       "It's about prominent people attracting the most criticism."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "cy-cenedl-heb-iaith",
@@ -1595,7 +1628,7 @@
       "It's about a language being the core of a nation's identity."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "ar-al-qird-fi-ayn-ummih",
@@ -1624,13 +1657,16 @@
       "It's about love making parents see their children as beautiful."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "no-liten-tue-kan-velte",
     "original": "Liten tue kan velte stort lass.",
     "language": "Norwegian",
-    "acceptedCountries": ["NO"],
+    "acceptedCountries": [
+      "NO",
+      "SE"
+    ],
     "literal": "A small tussock can overturn a big load.",
     "meanings": [
       "Small things can cause big problems",
@@ -1652,13 +1688,16 @@
       "It's about small things having big consequences."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   },
   {
     "id": "hu-addig-nyujtozkodj",
     "original": "Addig nyújtózkodj, ameddig a takaród ér.",
     "language": "Hungarian",
-    "acceptedCountries": ["HU"],
+    "acceptedCountries": [
+      "HU",
+      "TR"
+    ],
     "literal": "Stretch out only as far as your blanket reaches.",
     "meanings": [
       "Live within your means",
@@ -1680,6 +1719,6 @@
       "It's about living within your means."
     ],
     "difficulty": "medium",
-    "verified": false
+    "verified": true
   }
 ]
