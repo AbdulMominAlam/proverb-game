@@ -8,7 +8,7 @@ export const SITE_URL = 'https://playproverbial.com'
 // Used in link previews, the page title and the share image (npm run share-images).
 export const SITE_TAGLINE = 'A proverb from somewhere in the world. What does it mean?'
 export const SITE_DESCRIPTION =
-  'The daily proverb game. One proverb from somewhere in the world, translated word for word: guess what it means, then where it’s from. A free proverb guessing game.'
+  'A daily word game: get a proverb from somewhere in the world, translated word for word. Guess what it means, then where it’s from. Like Wordle, but for proverbs.'
 
 // Puzzle #1 is played on this local date (YYYY-MM-DD).
 export const LAUNCH_DATE = '2026-10-22'

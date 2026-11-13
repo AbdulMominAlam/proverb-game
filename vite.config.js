@@ -13,7 +13,7 @@ const jsonLd = (value) => JSON.stringify(value).replace(/</g, '\\u003c')
 function siteMeta() {
   const values = {
     GAME_NAME,
-    PAGE_TITLE: `${GAME_NAME} – A daily proverb puzzle`,
+    PAGE_TITLE: `${GAME_NAME} – A daily word game with proverbs from around the world`,
     SITE_URL,
     SITE_DESCRIPTION,
     MAX_MEANING_ATTEMPTS: String(MAX_MEANING_ATTEMPTS),
